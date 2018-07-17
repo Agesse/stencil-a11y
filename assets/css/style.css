@@ -1,0 +1,43 @@
+body {
+  padding-top: 2%;
+}
+
+h2 {
+  color: #00796B;
+}
+
+pre>code {
+  border: none;
+  padding: 0;
+}
+
+.pe-a11y-rating {
+  cursor: pointer;
+  display: inline-block;
+  font-size: larger;
+}
+
+.small {
+  font-size: smaller;
+}
+
+#basic-max.pe-a11y-rating .hover {
+  border-radius: 5px;
+  background: grey;
+}
+
+#selection-fancy {
+  vertical-align: text-bottom;
+  margin-left: 15px;
+  color: #4a4a4a;
+  font-size: large;
+}
+
+.pea11y-uxstars-label {
+  margin-left: 15px;
+  vertical-align: text-top;
+}
+
+.pea11y-uxstars-empty {
+  vertical-align: middle;
+}
