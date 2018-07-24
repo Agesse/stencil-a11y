@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+    <title>PeA11y Snippet</title>
+    <link rel="stylesheet" href="assets/css/normalize.css">
+    <link rel="stylesheet" href="assets/css/skeleton.css">
+    <link rel="stylesheet" href="prismjs/themes/prism-okaidia.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="/build/pea11y.js"></script>
+    <script src="prismjs/prism.js"></script>
+    <!-- <script src="assets/scripts/snippet.js"></script> -->
+    <script>
+      function init() {
+        var uris = {
+          "html": "assets/html.txt",
+          "js": "assets/js.txt",
+          "css": "assets/css.txt"
+        };
+        document.querySelector("pea11y-snippet").uris = uris;
+      }
+    </script>
+  </head>
+
+  <body class="container" onload="init()">
+    <h1>PeA11y Composants</h1>
+    <div id="snippet">
+      <hr>
+      <h2>Snippet</h2>
+      <p>Composant permettant d'afficher du code dans plusieurs langages, sous forme d'onglets et avec une coloration syntaxique.
+        <br> Il a besoin de la librairie PrismJS pour fonctionner.</p>
+      <pre aria-hidden="true"><code class="language-markup">&lt;script src="node_modules/@pea11y/snippet/dist/pea11y.js"&gt;&lt;/script&gt;</code></pre>
+
+
+      <pea11y-snippet aria-hidden="true"></pea11y-snippet>
+    </div>
+  </body>
+
+</html>

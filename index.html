@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="lib/rating/rating.css">
 
-    <link rel="icon" type="image/png" href="assets/img/favicon.png">
+    <link rel="icon" type="image/png" href="assets/img/pea11y-favicon.png">
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/@pea11y/uxstars/dist/pea11y.js"></script>
@@ -28,9 +28,14 @@
 
   <body class="container">
 
-    <h1>PeA11y Composants accessibles</h1>
+    <header id="top">
+      <img src="assets/img/pea11y-icon.svg" alt="" width="100px">
+      <h1>PeA11y
+        <span>Composants accessibles</span>
+      </h1>
+      <hr>
+    </header>
 
-    <hr>
     <h2 id="rating">Notation</h2>
     <p>Composant de type potentiomètre permettant de choisir un score avec les flèches ou à la souris.</p>
 
@@ -187,6 +192,10 @@
     <span id="selection-readonly"></span>
 
     <div id="demo-uxstars"></div>
+
+    <div class="top-link">
+      <a href="#top">Retour en haut</a>
+    </div>
 
   </body>
 

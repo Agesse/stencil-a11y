@@ -1,9 +1,41 @@
-body {
-  padding-top: 2%;
+/* CSS VARIABLES */
+
+:root {
+  --accent-color: #00796B;
+  --normal-color: #222;
+}
+
+.container {
+  padding-top: 40px;
+}
+
+header img {
+  float: right;
+}
+
+h1,
+a {
+  color: var(--accent-color);
+}
+
+h1 span {
+  color: var(--normal-color);
+  font-weight: normal;
+  font-size: 3rem;
+}
+
+.top-link {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 5px;
+  margin: 10px;
+  font-size: 1.8rem;
+  background: white;
 }
 
 h2 {
-  color: #00796B;
+  color: var(--accent-color);
 }
 
 pre>code {
