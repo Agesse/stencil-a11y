@@ -12,15 +12,20 @@
     <link rel="stylesheet" href="assets/css/skeleton.css">
     <link rel="stylesheet" href="assets/css/prism.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
     <link rel="stylesheet" href="lib/rating/rating.css">
+    <link rel="stylesheet" href="assets/css/snippet.css">
 
     <link rel="icon" type="image/png" href="assets/img/pea11y-favicon.png">
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="node_modules/@pea11y/uxstars/dist/pea11y.js"></script>
+    <script src="node_modules/@pea11y/snippet/dist/pea11y-snippet.js"></script>
     <script src="assets/prism.js"></script>
     <script src="assets/script.js"></script>
+
     <script src="assets/scripts/uxstars.js"></script>
+    <script src="assets/scripts/snippet.js"></script>
     <script src="lib/rating/rating.js"></script>
 
   </head>
@@ -42,14 +47,14 @@
     <p>
       Le composant demande la librairie JQuery 3.3.1 minimum.
     </p>
-    <pre class="lang-html"><code>&lt;link rel="stylesheet" href="pe-a11y/rating/rating.css"&gt;
+    <pre class="lang-html" aria-hidden="true"><code>&lt;link rel="stylesheet" href="pe-a11y/rating/rating.css"&gt;
 &lt;script src="pe-a11y/rating/rating.js"&gt;&lt;/script&gt;</code></pre>
 
 
     <p>
       Il est obligatoire de renseigner soit un label, soit un labelledBy, sinon le composant sera en erreur pour des raisons d'accessibilité.
     </p>
-    <table>
+    <table aria-hidden="true">
       <thead>
         <tr>
           <th>Nom</th>
@@ -192,6 +197,7 @@
     <span id="selection-readonly"></span>
 
     <div id="demo-uxstars"></div>
+    <div id="demo-snippet"></div>
 
     <div class="top-link">
       <a href="#top">Retour en haut</a>

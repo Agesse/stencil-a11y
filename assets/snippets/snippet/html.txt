@@ -1,0 +1,4 @@
+<link rel="stylesheet" href="prismjs/themes/prism.css">
+<script src="prismjs/prism.js"></script>
+
+<pea11y-snippet aria-hidden="true"></pea11y-snippet>

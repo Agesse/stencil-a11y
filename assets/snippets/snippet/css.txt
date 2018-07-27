@@ -1,0 +1,21 @@
+pea11y-snippet pre {
+  margin-top: 0 !important;
+}
+
+pea11y-snippet button {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 0;
+}
+
+pea11y-snippet button[tabindex="-1"] {
+  border-top-color: transparent;
+  border-left: none;
+  border-right: none;
+
+}
+
+pea11y-snippet .active {
+  border-bottom-color: transparent;
+  background: #f5f2f0;
+}

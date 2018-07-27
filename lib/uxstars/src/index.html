@@ -12,13 +12,9 @@
     <script src="/build/pea11y.js"></script>
     <script src="assets/prism.js"></script>
     <script src="assets/scripts/uxstars.js"></script>
-    <script>
-
-    </script>
-
   </head>
 
-  <body class="container" onload="init()">
+  <body class="container">
     <h1>PeA11y Composants</h1>
     <div id="uxstars">
       <hr>
@@ -90,9 +86,11 @@
         </tbody>
       </table>
 
-      <pea11y-uxstars img-empty="assets/img/uxstars_empty.svg" img-full="assets/img/uxstars.svg" value="52"></pea11y-uxstars>
-      <pea11y-uxstars img-empty="assets/img/uxstars_empty.svg" img-full="assets/img/uxstars.svg" value="30" label="30%"></pea11y-uxstars>
-      <pea11y-uxstars id="resetuxstars" img-empty="assets/img/uxstars_empty.svg" img-full="assets/img/uxstars.svg" value="82" label="Excellent"></pea11y-uxstars>
+      <pea11y-uxstars img-empty="assets/img/uxstars_empty.svg" img-full="assets/img/uxstars.svg" img-size="[78,15]" value="52"></pea11y-uxstars>
+      <pea11y-uxstars img-empty="assets/img/uxstars_empty.svg" img-full="assets/img/uxstars.svg" img-size="[78,15]" value="30"
+        label="30%"></pea11y-uxstars>
+      <pea11y-uxstars id="resetuxstars" img-empty="assets/img/uxstars_empty.svg" img-full="assets/img/uxstars.svg" img-size="[78,15]"
+        value="82" label="Excellent"></pea11y-uxstars>
       <button onclick="resetUxstars('resetuxstars')">Mettre à zéro</button>
       <br>
 
@@ -107,12 +105,7 @@
 } 
 .pea11y-uxstars-empty { vertical-align: middle; }</code></pre>
 
-      <pre aria-hidden="true"><code class="language-js">function init() { 
-  var elemUxstars = document.getElementsByTagName("pea11y-uxstars"); 
-  for (var i = 0, l = elemUxstars.length; i < l; i++) { 
-    elemUxstars[i].imgSize = [78, 15]; 
-  } 
-} 
+      <pre aria-hidden="true"><code class="language-js">
 function resetUxstars(idElem) { 
   document.getElementById(idElem).setAttribute("value", 0); 
 }</code></pre>

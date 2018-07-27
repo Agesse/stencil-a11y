@@ -1,4 +1,4 @@
-function init() {
+function initUxstars() {
   var elemUxstars = document.getElementsByTagName("pea11y-uxstars");
   for (var i = 0, l = elemUxstars.length; i < l; i++) {
     elemUxstars[i].imgSize = [78, 15];

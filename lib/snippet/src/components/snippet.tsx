@@ -1,58 +1,152 @@
-import { Component, Prop, Watch } from '@stencil/core';
+import { Component, Prop, Listen, Element } from '@stencil/core';
+import * as Render from "./utils";
 import * as Prism from "prismjs";
 
 @Component({
-  tag: 'pea11y-snippet',
-  styleUrl: 'snippet.css'
+  tag: 'pea11y-snippet'
 })
 export class Snippet {
 
-  // Autres parametres
-  @Prop() uris: any; // uri du fichier contenant le code html
+  // Parametres
+  @Prop() dataHtml: string;
+  @Prop() dataJs: string;
+  @Prop() dataCss: string;
 
-  // Variables internes
+  // Variables 
+  @Element() snippetEl: HTMLElement;
   data: any = {};
-
-  @Watch("uris")
-  watchUris() {
-    this.render();
-  }
+  activeTab = 0;
+  componentId: string;
 
   componentWillLoad() {
-    if (this.uris) {
-      var promises = [];
-      if (this.uris.html) {
-        var promiseHTMl = fetch(this.uris.html)
-          .then(response => response.text())
-        promises.push(promiseHTMl);
-      }
-      if (this.uris.js) {
-        var promiseJS = fetch(this.uris.js)
-          .then(response => response.text())
-        promises.push(promiseJS);
-      }
-      if (this.uris.css) {
-        var promiseCSS = fetch(this.uris.css)
-          .then(response => response.text())
-        promises.push(promiseCSS);
-      }
+    this.componentId = Render.generateId("pea11y-snippet");
+    this.snippetEl.setAttribute("id", this.componentId);
+  }
 
-      return Promise.all(promises)
-        .then(values => {
-          this.data.html = Prism.default.highlight(values[0], Prism.default.languages.markup);
-          this.data.js = Prism.default.highlight(values[1], Prism.default.languages.javascript);
-          this.data.css = Prism.default.highlight(values[2], Prism.default.languages.css);
-        });
+  @Listen('keydown.left')
+  handleLeftArrow(ev) {
+    this.changeTab(ev.srcElement, false);
+  }
+
+  @Listen('keydown.right')
+  handleRightArrow(ev) {
+    this.changeTab(ev.srcElement, true);
+  }
+
+  onClickTab(ev) {
+    this.changeTab(ev.srcElement, false, true);
+  }
+
+
+  changeTab(srcElement: any, next: boolean, click?: boolean) {
+    var tabList = srcElement.parentElement.childNodes;
+    var tabPanelList = srcElement.parentElement.parentElement.childNodes[1].childNodes;
+    var newActiveTab;
+    if (click) {
+      for (var i = 0, l = tabList.length; i < l; i++) {
+        if (srcElement == tabList[i]) {
+          newActiveTab = i;
+        }
+      }
+    } else {
+      newActiveTab = next ? this.activeTab + 1 : this.activeTab - 1;
+    }
+
+    if (newActiveTab > -1 && newActiveTab < tabList.length) {
+      Render.activateButton(tabList[newActiveTab]);
+      Render.deactivateButton(tabList[this.activeTab]);
+      tabPanelList[this.activeTab].hidden = true;
+      tabPanelList[newActiveTab].hidden = false;
+      this.activeTab = newActiveTab;
     }
   }
 
 
+  renderTabButton(type: string) {
+    let tabTxt: string;
+    let tabIndex = -1;
+    let selected = false;
+    switch (type) {
+      case "html":
+        tabTxt = "HTML";
+        tabIndex = 0;
+        selected = true;
+        break;
+      case "js":
+        tabTxt = "Javascript";
+        break;
+      case "css":
+        tabTxt = "CSS";
+        break;
+    }
+    return <button role="tab"
+      class={type == "html" ? "active" : null}
+      onClick={ev => this.onClickTab(ev)}
+      key={type}
+      aria-selected={selected}
+      aria-controls={this.componentId + "-" + type + "-tabpanel"}
+      id={this.componentId + "-" + type + "-tab"}
+      tabindex={tabIndex}>{tabTxt}</button>;
+  }
+
+
+  renderTabPanel(type: string) {
+    let language;
+    let data;
+    let prismGrammar;
+    let hidden = true;
+    switch (type) {
+      case "html":
+        language = "markup";
+        data = this.dataHtml;
+        prismGrammar = Prism.default.languages.markup;
+        hidden = false;
+        break;
+      case "js":
+        language = "javascript";
+        data = this.dataJs;
+        prismGrammar = Prism.default.languages.javascript;
+        break;
+      case "css":
+        language = "css";
+        data = this.dataCss;
+        prismGrammar = Prism.default.languages.css;
+        break;
+    }
+    return <pre class={"language-" + language}
+      key={type}
+      role="tabpanel"
+      id={this.componentId + "-" + type + "-tabpanel"}
+      aria-labelledby={this.componentId + "-" + type + "-tab"}
+      hidden={hidden}>
+      <code class={"language-" + language} innerHTML={Prism.default.highlight(data, prismGrammar)}></code>
+    </pre>;
+  }
+
+
   render() {
+    var tabElems = []; // liste des onglets disponibles
+    var tabpanelElems = []; // liste des panels associes
+    if (this.dataHtml) {
+      tabElems.push(this.renderTabButton("html"));
+      tabpanelElems.push(this.renderTabPanel("html"));
+    }
+    if (this.dataJs) {
+      tabElems.push(this.renderTabButton("js"));
+      tabpanelElems.push(this.renderTabPanel("js"));
+    }
+    if (this.dataCss) {
+      tabElems.push(this.renderTabButton("css"));
+      tabpanelElems.push(this.renderTabPanel("css"));
+    }
     return (
-      <div>
-        <pre class="language-markup"><code class="language-markup" innerHTML={this.data.html}></code></pre>
-        <pre class="language-javascript"><code class="language-javascript" innerHTML={this.data.js}></code></pre>
-        <pre class="language-css"><code class="language-css" innerHTML={this.data.css}></code></pre>
+      <div class="pea11y-snippet-tabs">
+        <div role="tablist">
+          {tabElems}
+        </div>
+        <div>
+          {tabpanelElems}
+        </div>
       </div>
     );
   }

@@ -8,6 +8,13 @@ $(document).ready(function () {
     }
     Prism.highlightAllUnder(document.getElementById("uxstars"));
   });
+  $("#demo-snippet").load("http://localhost:8000/lib/snippet/src/index.html #snippet", function (res, status, xhr) {
+    if (status === "error") {
+      console.error("erreur", xhr.status, xhr.statusText);
+    }
+    initSnippet();
+  });
+
 
 
 

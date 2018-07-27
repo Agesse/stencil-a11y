@@ -7,7 +7,14 @@
   "types": "dist/types/components.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
-    "dist/"
+    "dist/collection/components",
+    "dist/collection/collection-manifest.json",
+    "dist/collection/interface.js",
+    "dist/esm",
+    "dist/pea11y-uxstars",
+    "dist/types",
+    "dist/index.js",
+    "dist/pea11y-uxstars.js"
   ],
   "scripts": {
     "build": "stencil build && npm pack",

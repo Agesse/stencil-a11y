@@ -30,7 +30,9 @@ declare global {
 
   namespace StencilComponents {
     interface Pea11ySnippet {
-      'uris': any;
+      'dataCss': string;
+      'dataHtml': string;
+      'dataJs': string;
     }
   }
 
@@ -53,7 +55,9 @@ declare global {
   }
   namespace JSXElements {
     export interface Pea11ySnippetAttributes extends HTMLAttributes {
-      'uris'?: any;
+      'dataCss'?: string;
+      'dataHtml'?: string;
+      'dataJs'?: string;
     }
   }
 }
