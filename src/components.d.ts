@@ -62,6 +62,47 @@ declare global {
   }
 }
 
+
+declare global {
+
+  namespace StencilComponents {
+    interface Pea11yUxstars {
+      'imgEmpty': string;
+      'imgFull': string;
+      'imgSize': any;
+      'label': string;
+      'value': number;
+    }
+  }
+
+  interface HTMLPea11yUxstarsElement extends StencilComponents.Pea11yUxstars, HTMLStencilElement {}
+
+  var HTMLPea11yUxstarsElement: {
+    prototype: HTMLPea11yUxstarsElement;
+    new (): HTMLPea11yUxstarsElement;
+  };
+  interface HTMLElementTagNameMap {
+    'pea11y-uxstars': HTMLPea11yUxstarsElement;
+  }
+  interface ElementTagNameMap {
+    'pea11y-uxstars': HTMLPea11yUxstarsElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'pea11y-uxstars': JSXElements.Pea11yUxstarsAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface Pea11yUxstarsAttributes extends HTMLAttributes {
+      'imgEmpty'?: string;
+      'imgFull'?: string;
+      'imgSize'?: any;
+      'label'?: string;
+      'value'?: number;
+    }
+  }
+}
+
 declare global { namespace JSX { interface StencilJSX {} } }
 
 export declare function defineCustomElements(window: any): void;

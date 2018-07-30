@@ -1,0 +1,77 @@
+<h2>UXStars</h2>
+<p>Composant permettant d'afficher deux images superposées, la seconde remplissant proportionnellement la première.
+  <br> Ce composant est utilisé en particulier pour afficher un score étoile en pourcentage.</p>
+<pre aria-hidden="true"><code class="language-html">&lt;script src="node_modules/@pea11y/uxstars/dist/pea11y.js"&gt;&lt;/script&gt;</code></pre>
+
+<table aria-hidden="true">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Défaut</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>img-empty</code>
+      </td>
+      <td>Chemin de l'image vide (OBLIGATOIRE).</td>
+      <td>
+        <code>string</code>
+      </td>
+      <td>null</td>
+    </tr>
+    <tr>
+      <td>
+        <code>img-full</code>
+      </td>
+      <td>Chemin de l'image remplie (OBLIGATOIRE).</td>
+      <td>
+        <code>string</code>
+      </td>
+      <td>null</td>
+    </tr>
+    <tr>
+      <td>
+        <code>img-size</code>
+      </td>
+      <td>Taille de l'image utilisée (OBLIGATOIRE).</td>
+      <td>
+        <code>number[]</code>
+      </td>
+      <td>null</td>
+    </tr>
+    <tr>
+      <td>
+        <code>value</code>
+      </td>
+      <td>Valeur sélectionnée.</td>
+      <td>
+        <code>int</code>
+      </td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>
+        <code>label</code>
+      </td>
+      <td>Texte affiché à coté de l'image.</td>
+      <td>
+        <code>string</code>
+      </td>
+      <td>null</td>
+    </tr>
+  </tbody>
+</table>
+
+<pea11y-uxstars img-empty="assets/img/uxstars_empty.svg" img-full="assets/img/uxstars.svg" img-size="[78,15]" value="52"></pea11y-uxstars>
+<pea11y-uxstars img-empty="assets/img/uxstars_empty.svg" img-full="assets/img/uxstars.svg" img-size="[78,15]" value="30"
+  label="30%"></pea11y-uxstars>
+<pea11y-uxstars id="resetuxstars" img-empty="assets/img/uxstars_empty.svg" img-full="assets/img/uxstars.svg" img-size="[78,15]"
+  value="82" label="Excellent"></pea11y-uxstars>
+<button onclick="resetUxstars('resetuxstars')">Mettre à zéro</button>
+<br>
+
+<pea11y-snippet id="snippet-uxstars" aria-hidden="true"></pea11y-snippet>

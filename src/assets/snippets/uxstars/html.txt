@@ -1,0 +1,4 @@
+<pea11y-uxstars img-empty="assets/uxstars_empty.svg" img-full="assets/uxstars.svg" value="52"></pea11y-uxstars>
+<pea11y-uxstars img-empty="assets/uxstars_empty.svg" img-full="assets/uxstars.svg" value="30" label="30%"></pea11y-uxstars>
+<pea11y-uxstars id="resetuxstars" img-empty="assets/uxstars_empty.svg" img-full="assets/uxstars.svg" value="82" label="Excellent"></pea11y-uxstars>
+<button onclick="resetUxstars('resetuxstars')">Mettre à zéro</button>

@@ -1,0 +1,3 @@
+function resetUxstars(idElem) { 
+  document.getElementById(idElem).setAttribute("value", 0); 
+}

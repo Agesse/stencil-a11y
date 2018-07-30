@@ -1,23 +1,4 @@
-"use strict";
-
-$(document).ready(function () {
-
-  $("#demo-uxstars").load("http://localhost:8000/lib/uxstars/src/index.html #uxstars", function (res, status, xhr) {
-    if (status === "error") {
-      console.error("erreur", xhr.status, xhr.statusText);
-    }
-    Prism.highlightAllUnder(document.getElementById("uxstars"));
-  });
-  $("#demo-snippet").load("http://localhost:8000/lib/snippet/src/index.html #snippet", function (res, status, xhr) {
-    if (status === "error") {
-      console.error("erreur", xhr.status, xhr.statusText);
-    }
-    initSnippet();
-  });
-
-
-
-
+function initRating() {
   // Exemple basic
   $("#basic").peA11yRating(
     {
@@ -86,8 +67,7 @@ $(document).ready(function () {
   function onchangeReadonly() {
     $("#selection-readonly").text($("#readonly").peA11yRating("getValue"));
   }
-
-});
+}
 
 
 function reset(idElem) {

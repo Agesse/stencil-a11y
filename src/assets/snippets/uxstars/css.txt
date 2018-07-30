@@ -1,0 +1,5 @@
+.pea11y-uxstars-label { 
+  margin-left: 15px; 
+  vertical-align: text-top; 
+} 
+.pea11y-uxstars-empty { vertical-align: middle; }

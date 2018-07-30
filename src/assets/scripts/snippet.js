@@ -1,9 +1,9 @@
 function initSnippet() {
-  var promiseHTMl = fetch("http://localhost:8000/assets/snippets/snippet/html.txt")
+  var promiseHTMl = fetch("assets/snippets/snippet/html.txt")
     .then(response => response.text())
-  var promiseJS = fetch("http://localhost:8000/assets/snippets/snippet/js.txt")
+  var promiseJS = fetch("assets/snippets/snippet/js.txt")
     .then(response => response.text())
-  var promiseCSS = fetch("http://localhost:8000/assets/snippets/snippet/css.txt")
+  var promiseCSS = fetch("assets/snippets/snippet/css.txt")
     .then(response => response.text())
 
   return Promise.all([promiseHTMl, promiseJS, promiseCSS])
