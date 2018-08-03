@@ -45,14 +45,14 @@ export class Uxstars {
       return;
     }
     return (
-      <div>
+      <div title={this.value + "%"}>
         <div class="pea11y-uxstars-empty" style={this.emptyStyle}>
           <div class="pea11y-uxstars-full" style={this.fullStyle}></div>
 
         </div>
         {this.label
           ? <span class="pea11y-uxstars-label">{this.label}</span>
-          : <span class="sr-only">{this.value}</span>
+          : <span class="sr-only">{"Note : " + this.value + "%"}</span>
         }
       </div>
     );

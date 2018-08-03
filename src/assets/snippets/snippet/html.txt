@@ -1,4 +1,6 @@
-<link rel="stylesheet" href="prismjs/themes/prism.css">
-<script src="prismjs/prism.js"></script>
+<link rel="stylesheet" href="node_modules/prismjs/themes/prism.css" />
+<script src="node_modules/prismjs/prism.js"></script>
 
-<pea11y-snippet id="snippet-snippet"></pea11y-snippet>
+...
+
+<pea11y-snippet data-html="app/snippet/snippets/html.txt" data-js="app/snippet/snippets/js.txt" data-css="app/snippet/snippets/css.txt"></pea11y-snippet>

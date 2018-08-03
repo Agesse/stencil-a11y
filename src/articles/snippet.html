@@ -2,4 +2,47 @@
 <p>Composant permettant d'afficher du code dans plusieurs langages, sous forme d'onglets et avec une coloration syntaxique.
   <br> Il a besoin de la librairie PrismJS pour fonctionner, et il faut obligatoirement lier un thème prismjs.</p>
 
-<pea11y-snippet></pea11y-snippet>
+<table aria-hidden="true">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Défaut</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>data-html</code>
+      </td>
+      <td>Chemin du morceau de code HTML.</td>
+      <td>
+        <code>string</code>
+      </td>
+      <td>null</td>
+    </tr>
+    <tr>
+      <td>
+        <code>data-js</code>
+      </td>
+      <td>Chemin du morceau de code Javascript.</td>
+      <td>
+        <code>string</code>
+      </td>
+      <td>null</td>
+    </tr>
+    <tr>
+      <td>
+        <code>data-css</code>
+      </td>
+      <td>Chemin du morceau de code CSS.</td>
+      <td>
+        <code>string</code>
+      </td>
+      <td>null</td>
+    </tr>
+  </tbody>
+</table>
+
+<pea11y-snippet data-html="assets/snippets/snippet/html.txt" data-css="assets/snippets/snippet/css.txt"></pea11y-snippet>

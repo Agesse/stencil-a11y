@@ -25,14 +25,26 @@ h1 span {
   font-size: 3rem;
 }
 
-.top-link {
+nav {
   position: fixed;
-  bottom: 0;
-  right: 0;
-  padding: 5px;
-  margin: 10px;
-  font-size: 1.8rem;
-  background: white;
+  top: 15%;
+  left: 5%;
+}
+
+nav header {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  font-size: 1.6rem;
+  list-style: none;
+  line-height: 1.5rem;
+  margin-left: 10px;
+}
+
+nav a {
+  text-decoration: none;
 }
 
 h2 {
@@ -44,12 +56,6 @@ pre>code {
   padding: 0;
 }
 
-.pe-a11y-rating {
-  cursor: pointer;
-  display: inline-block;
-  font-size: larger;
-}
-
 .small {
   font-size: smaller;
 }
@@ -59,11 +65,25 @@ pre>code {
   background: grey;
 }
 
+.pe-a11y-rating {
+  cursor: pointer;
+  display: inline-block;
+  font-size: larger;
+}
+
+#readonly.pe-a11y-rating {
+  cursor: default;
+}
+
 #selection-fancy {
   vertical-align: text-bottom;
   margin-left: 15px;
   color: #4a4a4a;
   font-size: large;
+}
+
+.pea11y-snippet-tabs {
+  margin-top: 20px;
 }
 
 .pea11y-uxstars-label {

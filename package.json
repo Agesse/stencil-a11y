@@ -1,19 +1,29 @@
 {
-  "name": "@pea11y/demo",
+  "name": "pea11y",
   "version": "1.0.0",
   "description": "Site de demonstration des composants accessibles PeA11y",
   "module": "dist/esm/index.js",
   "collection": "dist/collection/collection-manifest.json",
-  "types": "dest/types/components.d.ts",
+  "types": "dist/types/components.d.ts",
   "main": "dist/index.js",
+  "files": [
+    "dist/pea11y.js",
+    "dist/index.js",
+    "dist/types",
+    "dist/pea11y",
+    "dist/esm",
+    "dist/collection/interface.js",
+    "dist/collection/collection-manifest.json",
+    "dist/collection/components",
+    "rating"
+  ],
   "author": "shirley.noel@pole-emploi.fr",
   "license": "MIT",
   "repository": "ssh://git@git-scm.pole-emploi.intra:2222/Handicap_A11Y/Composants_JS.git",
   "scripts": {
-    "start python": "python -m SimpleHTTPServer",
     "start": "stencil build --dev --watch --serve"
   },
-  "dependencies": {
+  "devDependencies": {
     "@stencil/core": "^0.10.0",
     "@stencil/router": "^0.2.2",
     "prismjs": "1.15.0"

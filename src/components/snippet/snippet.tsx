@@ -21,6 +21,20 @@ export class Snippet {
   componentWillLoad() {
     this.componentId = Render.generateId("pea11y-snippet");
     this.snippetEl.setAttribute("id", this.componentId);
+
+    var promiseHTMl = this.dataHtml ? fetch(this.dataHtml)
+      .then(response => response.text()) : null;
+    var promiseJS = this.dataJs ? fetch(this.dataJs)
+      .then(response => response.text()) : null;
+    var promiseCSS = this.dataCss ? fetch(this.dataCss)
+      .then(response => response.text()) : null;
+
+    return Promise.all([promiseHTMl, promiseJS, promiseCSS])
+      .then(values => {
+        this.data.html = values[0];
+        this.data.js = values[1];
+        this.data.css = values[2];
+      });
   }
 
   @Listen('keydown.left')
@@ -98,18 +112,18 @@ export class Snippet {
     switch (type) {
       case "html":
         language = "markup";
-        data = this.dataHtml;
+        data = this.data.html;
         prismGrammar = Prism.default.languages.markup;
         hidden = false;
         break;
       case "js":
         language = "javascript";
-        data = this.dataJs;
+        data = this.data.js;
         prismGrammar = Prism.default.languages.javascript;
         break;
       case "css":
         language = "css";
-        data = this.dataCss;
+        data = this.data.css;
         prismGrammar = Prism.default.languages.css;
         break;
     }

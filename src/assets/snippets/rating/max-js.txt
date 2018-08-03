@@ -1,0 +1,16 @@
+$("#basic-max").peA11yRating(
+  {
+    max: 8,
+    initValue: 3,
+    labelledBy: "#label-basic-max",
+    onchange: onchangeBasicMax
+  }
+);
+function onchangeBasicMax() {
+  $("#selection-basic-max").text($("#basic-max").peA11yRating("getValue"));
+}
+onchangeBasicMax();
+
+function reset(idElem) {
+  $(idElem).peA11yRating("set", 0);
+}
