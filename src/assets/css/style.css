@@ -82,8 +82,67 @@ pre>code {
   font-size: large;
 }
 
+/* Snippets de code */
+
+pea11y-snippet pre {
+  margin-top: 0 !important;
+}
+
+pea11y-snippet button {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  margin-bottom: 0;
+}
+
+pea11y-snippet button[tabindex="-1"] {
+  border-top-color: transparent;
+  border-left: none;
+  border-right: none;
+}
+
+pea11y-snippet .active {
+  border-bottom-color: transparent;
+  background: #f5f2f0;
+}
+
 .pea11y-snippet-tabs {
   margin-top: 20px;
+}
+
+/* Tabs */
+
+pea11y-tabs button {
+  border: none;
+  border-radius: 0;
+}
+
+pea11y-tabs .active {
+  border-bottom: 2px solid var(--accent-color);
+}
+
+@keyframes slidein {
+  from {
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+  }
+  to {
+    border-bottom: 2px solid var(--accent-color);
+  }
+}
+
+pea11y-tabs button:hover {
+  animation-name: slidein;
+  animation-duration: 1s;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.pea11y-tabs-panels {
+  padding: 20px;
+  border: 1px solid #cfcfcf;
+  box-shadow: 5px 5px 5px 0px #cfcfcf;
+}
+
+.pea11y-tabs-panels h3 {
+  font-size: 2rem;
 }
 
 .pea11y-uxstars-label {

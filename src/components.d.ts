@@ -25,6 +25,9 @@ declare global {
   interface HTMLAttributes {}
 }
 
+import {
+  TabElement,
+} from './components/tabs/tabs';
 
 declare global {
 
@@ -58,6 +61,41 @@ declare global {
       'dataCss'?: string;
       'dataHtml'?: string;
       'dataJs'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
+    interface Pea11yTabs {
+      'label': string;
+      'tabsNames': TabElement[];
+    }
+  }
+
+  interface HTMLPea11yTabsElement extends StencilComponents.Pea11yTabs, HTMLStencilElement {}
+
+  var HTMLPea11yTabsElement: {
+    prototype: HTMLPea11yTabsElement;
+    new (): HTMLPea11yTabsElement;
+  };
+  interface HTMLElementTagNameMap {
+    'pea11y-tabs': HTMLPea11yTabsElement;
+  }
+  interface ElementTagNameMap {
+    'pea11y-tabs': HTMLPea11yTabsElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'pea11y-tabs': JSXElements.Pea11yTabsAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface Pea11yTabsAttributes extends HTMLAttributes {
+      'label'?: string;
+      'tabsNames'?: TabElement[];
     }
   }
 }

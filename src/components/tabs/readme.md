@@ -1,7 +1,7 @@
-PeA11y Snippet
+PeA11y Tabs
 ==============
 
-Ce composant permet d'afficher du code dans plusieurs langages, sous forme d'onglets et avec une coloration syntaxique. 
+Ce composant permet d'afficher des onglets contenant des templates HTML. 
 
 ARIA Pattern
 ------------
@@ -13,7 +13,7 @@ Ce composant respecte le pattern "tabs" avec activation automatique :
 - DROITE : bouge le focus sur l'onglet suivant. **TODO** Si le focus est sur le dernier onglet, bouge le focus sur le 1er onglet. Active l'onglet qui a le focus.
 
 - L'element qui contient l'ensemble des onglets a un role *tablist*
-- L'element tablist contient un label via *aria-label* ou *aria-labelledby*
+- **TODO** L'element tablist contient un label via *aria-label* ou *aria-labelledby*
 
 - Chaque element qui sert d'onglet a pour role *tab* et est contenu dans l'element *tablist*
 - Chaque element qui contient un contenu d'onglet (panel) a pour role *tabpanel*
@@ -26,8 +26,22 @@ Ce composant respecte le pattern "tabs" avec activation automatique :
 
 Configuration
 -------------
+* **tabs-names** : (OBLIGATOIRE)
+Pour l'utiliser, il faut donner un objet contenant le nom des tabs et un id simple par lesquels les differencier, exemple :
+```js
+[
+  { name: 'Confiture de cerise', id: 'cerise' },
+  { name: 'Frites belges', id: 'frites' },
+  { name: 'Cookies', id: 'cookies' },
+  { name: 'Limonade', id: 'limonade' }
+]
+```
 
-* **data-html** : chemin du fichier contenant le bout de code HTML
-* **data-css** : chemin du fichier contenant le bout de code CSS
-* **data-js** : chemin du fichier contenant le bout de code JS
+* **label** : un label pour l'onglet (OBLIGATOIRE)
 
+Ensuite il faut utiliser l'attribut "slot" sur l'element a injecter dans le panel, avec l'id du panel en question :
+```html
+<div slot="cookies">
+  <p>Des cookies</p>
+</div>
+```

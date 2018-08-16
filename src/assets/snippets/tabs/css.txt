@@ -1,0 +1,33 @@
+pea11y-tabs button {
+  border: none;
+  border-radius: 0;
+}
+
+pea11y-tabs .active {
+  border-bottom: 2px solid var(--accent-color);
+}
+
+@keyframes slidein {
+  from {
+    border-bottom: 2px solid rgba(0, 0, 0, 0);
+  }
+  to {
+    border-bottom: 2px solid var(--accent-color);
+  }
+}
+
+pea11y-tabs button:hover {
+  animation-name: slidein;
+  animation-duration: 1s;
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.pea11y-tabs-panels {
+  padding: 20px;
+  border: 1px solid #cfcfcf;
+  box-shadow: 5px 5px 5px 0px #cfcfcf;
+}
+
+.pea11y-tabs-panels h3 {
+  font-size: 2rem;
+}

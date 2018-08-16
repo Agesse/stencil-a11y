@@ -66,13 +66,17 @@ export class Snippet {
       newActiveTab = next ? this.activeTab + 1 : this.activeTab - 1;
     }
 
-    if (newActiveTab > -1 && newActiveTab < tabList.length) {
-      Render.activateButton(tabList[newActiveTab]);
-      Render.deactivateButton(tabList[this.activeTab]);
-      tabPanelList[this.activeTab].hidden = true;
-      tabPanelList[newActiveTab].hidden = false;
-      this.activeTab = newActiveTab;
+    // boucle sur les onglets
+    if (newActiveTab < 0) {
+      newActiveTab = tabList.length - 1;
+    } else if (newActiveTab > tabList.length - 1) {
+      newActiveTab = 0;
     }
+    Render.activateButton(tabList[newActiveTab]);
+    Render.deactivateButton(tabList[this.activeTab]);
+    tabPanelList[this.activeTab].hidden = true;
+    tabPanelList[newActiveTab].hidden = false;
+    this.activeTab = newActiveTab;
   }
 
 
@@ -155,7 +159,7 @@ export class Snippet {
     }
     return (
       <div class="pea11y-snippet-tabs">
-        <div role="tablist">
+        <div role="tablist" aria-label="Morceaux de code par langage">
           {tabElems}
         </div>
         <div>

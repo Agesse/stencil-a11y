@@ -1,0 +1,7 @@
+var demoTabs = [
+  { name: 'Confiture de cerise', id: 'cerise' },
+  { name: 'Frites belges', id: 'frites' },
+  { name: 'Cookies', id: 'cookies' },
+  { name: 'Limonade', id: 'limonade' }
+];
+document.querySelector("pea11y-tabs").tabsNames = demoTabs;
