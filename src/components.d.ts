@@ -25,9 +25,6 @@ declare global {
   interface HTMLAttributes {}
 }
 
-import {
-  TabElement,
-} from './components/tabs/tabs';
 
 declare global {
 
@@ -71,7 +68,7 @@ declare global {
   namespace StencilComponents {
     interface Pea11yTabs {
       'label': string;
-      'tabsNames': TabElement[];
+      'tabsNames': any;
     }
   }
 
@@ -95,7 +92,7 @@ declare global {
   namespace JSXElements {
     export interface Pea11yTabsAttributes extends HTMLAttributes {
       'label'?: string;
-      'tabsNames'?: TabElement[];
+      'tabsNames'?: any;
     }
   }
 }

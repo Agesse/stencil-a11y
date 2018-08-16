@@ -1,18 +1,13 @@
 import { Component, Prop, Listen, Element } from '@stencil/core';
 import * as Render from "./utils";
 
-export interface TabElement {
-  name: string;
-  id: string;
-}
-
 @Component({
   tag: 'pea11y-tabs'
 })
 export class Tabs {
 
   // Parametres
-  @Prop() tabsNames: TabElement[];
+  @Prop({ mutable: true }) tabsNames: any;
   @Prop() label: string;
 
   // Variables 
@@ -26,6 +21,9 @@ export class Tabs {
   componentWillLoad() {
     this.componentId = Render.generateId("pea11y-tabs");
     this.tabElement.setAttribute("id", this.componentId);
+    if (typeof this.tabsNames === "string") {
+      this.tabsNames = JSON.parse(this.tabsNames);
+    }
   }
 
   componentDidLoad() {
@@ -84,7 +82,7 @@ export class Tabs {
   }
 
 
-  renderTabButton(tabElement: TabElement, index: number) {
+  renderTabButton(tabElement: any, index: number) {
     let tabIndex = -1;
     let selected = false;
     if (index === 0) {

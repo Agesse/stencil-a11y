@@ -21,7 +21,8 @@
   "license": "MIT",
   "repository": "ssh://git@git-scm.pole-emploi.intra:2222/Handicap_A11Y/Composants_JS.git",
   "scripts": {
-    "start": "stencil build --dev --watch --serve"
+    "start": "stencil build --dev --watch --serve",
+    "build": "stencil build"
   },
   "devDependencies": {
     "@stencil/core": "^0.10.0",
