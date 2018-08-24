@@ -5,6 +5,7 @@ $(document).ready(function () {
     initRating();
   });
   $("#demo-uxstars").load("articles/uxstars.html");
+  $("#demo-tooltip").load("articles/tooltip.html");
   $("#demo-tabs").load("articles/tabs.html", () => {
     var demoTabs = [
       { name: 'Confiture de cerise', id: 'cerise' },

@@ -1,0 +1,67 @@
+<h2>Tooltip</h2>
+<p>Composant permettant d'afficher une information au focus sur un élément.</p>
+
+<table aria-hidden="true">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Type</th>
+      <th>Défaut</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>tooltip-label</code>
+      </td>
+      <td>Chaîne contenant le texte à afficher (OBLIGATOIRE).</td>
+      <td>
+        <code>string</code>
+      </td>
+      <td>null</td>
+    </tr>
+    <tr>
+      <td>
+        <code>same-as-txt</code>
+      </td>
+      <td>Mettre à vrai si le texte de l'élément est le même que celui du tooltip afin d'éviter des doublons au lecteur d'écran.</td>
+      <td>
+        <code>boolean</code>
+      </td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<style>
+  pea11y-tooltip button {
+    padding: 3px 10px;
+  }
+
+</style>
+
+<p>
+  Compétence en boulangerie
+  <pea11y-tooltip tooltip-label="Editer la compétence en boulangerie">
+    <button>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+        <title>Editer</title>
+        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"
+        />
+        <path d="M0 0h24v24H0z" fill="none" />
+      </svg>
+    </button>
+  </pea11y-tooltip>
+  <pea11y-tooltip tooltip-label="Supprimer la compétence en boulangerie" same-as-txt="true">
+    <button>
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+        <title>Supprimer la compétence en boulangerie</title>
+        <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+        <path d="M0 0h24v24H0z" fill="none" />
+      </svg>
+    </button>
+  </pea11y-tooltip>
+</p>
+
+<pea11y-snippet aria-hidden="true" data-html="assets/snippets/tooltip/html.txt"></pea11y-snippet>

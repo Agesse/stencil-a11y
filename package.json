@@ -22,11 +22,14 @@
   "repository": "ssh://git@git-scm.pole-emploi.intra:2222/Handicap_A11Y/Composants_JS.git",
   "scripts": {
     "start": "stencil build --dev --watch --serve",
-    "build": "stencil build"
+    "build": "stencil build && npm pack"
   },
   "devDependencies": {
     "@stencil/core": "^0.10.0",
     "@stencil/router": "^0.2.2",
     "prismjs": "1.15.0"
+  },
+  "dependencies": {
+    "popper.js": "^1.14.4"
   }
 }

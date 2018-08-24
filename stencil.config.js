@@ -8,6 +8,10 @@ exports.config = {
     },
     {
       src: "articles"
+    },
+    {
+      src: "../node_modules/prismjs",
+      dest: "prismjs"
     }
   ],
   outputTargets: [

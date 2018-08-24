@@ -101,6 +101,41 @@ declare global {
 declare global {
 
   namespace StencilComponents {
+    interface Pea11yTooltip {
+      'sameAsTxt': boolean;
+      'tooltipLabel': string;
+    }
+  }
+
+  interface HTMLPea11yTooltipElement extends StencilComponents.Pea11yTooltip, HTMLStencilElement {}
+
+  var HTMLPea11yTooltipElement: {
+    prototype: HTMLPea11yTooltipElement;
+    new (): HTMLPea11yTooltipElement;
+  };
+  interface HTMLElementTagNameMap {
+    'pea11y-tooltip': HTMLPea11yTooltipElement;
+  }
+  interface ElementTagNameMap {
+    'pea11y-tooltip': HTMLPea11yTooltipElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'pea11y-tooltip': JSXElements.Pea11yTooltipAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface Pea11yTooltipAttributes extends HTMLAttributes {
+      'sameAsTxt'?: boolean;
+      'tooltipLabel'?: string;
+    }
+  }
+}
+
+
+declare global {
+
+  namespace StencilComponents {
     interface Pea11yUxstars {
       'imgEmpty': string;
       'imgFull': string;

@@ -1,0 +1,31 @@
+.pea11y-tooltip:after {
+  top: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-top-color: #333;
+  border-width: 5px;
+  margin-left: -5px;
+}
+
+.pea11y-tooltip {
+  background: #333;
+  font-size: small;
+  text-align: center;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  visibility: hidden;
+  position: absolute;
+  white-space: nowrap;
+}
+
+pea11y-tooltip>div {
+  display: inline;
+  position: relative;
+}
