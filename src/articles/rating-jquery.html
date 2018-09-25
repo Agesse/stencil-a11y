@@ -1,9 +1,17 @@
-<h2>Notation</h2>
-<p>Composant de type potentiomètre permettant de choisir un score avec les flèches ou à la souris.<br>
-  Il est obligatoire de renseigner soit l'attribut label, soit l'attribut labelledBy, sinon le composant sera en erreur
-  pour des raisons d'accessibilité.
-</p>
+<h2 id="rating">Notation</h2>
+<p>Composant de type potentiomètre permettant de choisir un score avec les flèches ou à la souris.</p>
 
+<p>
+  Le composant demande la librairie JQuery 3.3.1 minimum.
+</p>
+<pre class="lang-html" aria-hidden="true"><code>&lt;link rel="stylesheet" href="pe-a11y/rating/rating.css"&gt;
+&lt;script src="pe-a11y/rating/rating.js"&gt;&lt;/script&gt;</code></pre>
+
+
+<p>
+  Il est obligatoire de renseigner soit un label, soit un labelledBy, sinon le composant sera en erreur pour des
+  raisons d'accessibilité.
+</p>
 <table aria-hidden="true">
   <thead>
     <tr>
@@ -18,7 +26,7 @@
       <td>
         <code>max</code>
       </td>
-      <td>Nombre d'icones affichées.</td>
+      <td>Nombre d'icones.</td>
       <td>
         <code>number</code>
       </td>
@@ -26,9 +34,9 @@
     </tr>
     <tr>
       <td>
-        <code>value</code>
+        <code>initValue</code>
       </td>
-      <td>Valeur sélectionnée a l'initialisation du composant.</td>
+      <td>Valeur initiale sélectionnée du composant.</td>
       <td>
         <code>number</code>
       </td>
@@ -36,7 +44,7 @@
     </tr>
     <tr>
       <td>
-        <code>allow-empty</code>
+        <code>allowEmpty</code>
       </td>
       <td>Autorise ou non 0 comme valeur sélectionnable.</td>
       <td>
@@ -56,7 +64,7 @@
     </tr>
     <tr>
       <td>
-        <code>text-values</code>
+        <code>textValue</code>
       </td>
       <td>Donne des alternatives textuelles aux valeurs numériques.</td>
       <td>
@@ -66,7 +74,7 @@
     </tr>
     <tr>
       <td>
-        <code>labelledby</code>
+        <code>labelledBy</code>
       </td>
       <td>Donne l'id de l'élément HTML qui sert de label au composant.</td>
       <td>
@@ -86,9 +94,9 @@
     </tr>
     <tr>
       <td>
-        <code>template-selected</code>
+        <code>templateFull</code>
       </td>
-      <td>Template HTML appliqué de la 1ère icône à l'icône dont la valeur est sélectionnée.</td>
+      <td>Template HTML de l'icone remplie.</td>
       <td>
         <code>string</code>
       </td>
@@ -96,30 +104,18 @@
     </tr>
     <tr>
       <td>
-        <code>template-empty</code>
+        <code>templateEmpty</code>
       </td>
-      <td>Template HTML appliqué aux icônes après la valeur sélectionnée.</td>
+      <td>Template HTML de l'icone vide.</td>
       <td>
         <code>string</code>
       </td>
       <td>"☆"</td>
     </tr>
-    <tr>
-      <td>
-        <code>template-hover</code>
-      </td>
-      <td>Template HTML appliqué de la 1ère icône à l'icône survolée.</td>
-      <td>
-        <code>string</code>
-      </td>
-      <td>"★"</td>
-    </tr>
   </tbody>
 </table>
 
-<pea11y-rating label="Notez sur 5 ce restaurant"></pea11y-rating>
 
-<br>
 <div id="basic" class="pe-a11y-rating"></div>
 <p aria-hidden="true">
   Selection:
@@ -132,9 +128,9 @@
 
 
 <br>
-<span id="label-basic-max">Notez le film sur 8 <br></span>
+<label id="label-basic-max">Notez le film sur 8</label>
 <div id="basic-max" class="pe-a11y-rating"></div>
-<button onclick="reset('#basic-max')">Reinitialiser<span class="sr-only"> la note du film</span></button>
+<button onclick="reset('#basic-max')">Reinitialiser</button>
 <p aria-hidden="true">
   Selection:
   <span id="selection-basic-max"> </span>

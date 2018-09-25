@@ -88,6 +88,7 @@
 
     // Keyboard function
     function onKeyDown(event) {
+      event.preventDefault();
       var value = getValue(this);
       var minValue = opts.allowEmpty ? 0 : 1;
 
@@ -156,7 +157,7 @@
       if ((!opts.labelledBy && !opts.label) || (opts.labelledBy && opts.label)) {
         $.error("The PeA11yRating plugin requires either labelledBy (if a label element exists) or label to be set, see doc for more information.");
       } else if (opts.labelledBy) {
-        this.attr("aria-labelledby", opts.labelledBy);
+        this.attr("aria-labelledby", opts.labelledBy.substring(1));
       } else {
         this.attr("aria-label", opts.label);
       }

@@ -65,7 +65,8 @@ pre>code {
   background: grey;
 }
 
-.pe-a11y-rating {
+.pe-a11y-rating,
+pea11y-rating {
   cursor: pointer;
   display: inline-block;
   font-size: larger;
