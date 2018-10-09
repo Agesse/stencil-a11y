@@ -17,7 +17,7 @@ export namespace Components {
     'labelledby': string;
     'max': number;
     'readonly': boolean;
-    'set': (newValue: number) => void;
+    'setValue': (newValue: number) => void;
     'templateEmpty': string;
     'templateHover': string;
     'templateSelected': string;
@@ -29,6 +29,8 @@ export namespace Components {
     'label'?: string;
     'labelledby'?: string;
     'max'?: number;
+    'onOnChange'?: (event: CustomEvent) => void;
+    'onOnMouseOver'?: (event: CustomEvent) => void;
     'readonly'?: boolean;
     'templateEmpty'?: string;
     'templateHover'?: string;

@@ -1,21 +1,21 @@
 function initRating() {
   // Exemple basic
-  $("#basic").peA11yRating(
-    {
-      label: "Exemple de rating",
-      onmouseover: onmouseoverBasic,
-      onmouseleave: onmouseoverBasic,
-      onchange: onchangeBasic
-    }
-  );
-  function onmouseoverBasic() {
-    $("#hover-basic").text($("#basic").peA11yRating("getHoveredValue"));
-  }
-  function onchangeBasic() {
-    $("#selection-basic").text($("#basic").peA11yRating("getValue"));
-  }
-  onmouseoverBasic();
-  onchangeBasic();
+  // $("#basic").peA11yRating(
+  //   {
+  //     label: "Exemple de rating",
+  //     onmouseover: onmouseoverBasic,
+  //     onmouseleave: onmouseoverBasic,
+  //     onchange: onchangeBasic
+  //   }
+  // );
+  // function onmouseoverBasic() {
+  //   $("#hover-basic").text($("#basic").peA11yRating("getHoveredValue"));
+  // }
+  // function onchangeBasic() {
+  //   $("#selection-basic").text($("#basic").peA11yRating("getValue"));
+  // }
+  // onmouseoverBasic();
+  // onchangeBasic();
 
 
 

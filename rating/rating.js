@@ -88,7 +88,6 @@
 
     // Keyboard function
     function onKeyDown(event) {
-      event.preventDefault();
       var value = getValue(this);
       var minValue = opts.allowEmpty ? 0 : 1;
 
@@ -96,6 +95,7 @@
         // Right arrow, up arrow
         case 39:
         case 38:
+          event.preventDefault();
           if (value < opts.max) {
             setValue(this, value + 1);
           }
@@ -104,6 +104,7 @@
         // Left arrow, down arrow
         case 37:
         case 40:
+          event.preventDefault();
           if (value > minValue) {
             setValue(this, value - 1);
           }
@@ -111,11 +112,13 @@
 
         // Home
         case 36:
+          event.preventDefault();
           setValue(this, minValue);
           break;
 
         // End
         case 35:
+          event.preventDefault();
           setValue(this, opts.max);
           break;
       }

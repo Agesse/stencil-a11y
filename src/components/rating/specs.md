@@ -23,7 +23,7 @@ Donnees
 * La valeur est recuperable
 * Possibilite de preselectionner une valeur
 * Possibilite de changer la valeur selectionnee
-* Possibilite de choisir que 0 n'est pas autorise, dans ce cas cliquer a nouveau sur la valeur ne fait rien
+* Possibilite de choisir que 0 n'est pas autorise, dans ce cas cliquer a nouveau sur la valeur ne fait rien (**A REVOIR ??**)
 * Possibilite de connaitre la valeur survolee
 
 Affichage

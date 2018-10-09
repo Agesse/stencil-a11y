@@ -3,6 +3,7 @@
 $(document).ready(function () {
   $("#demo-rating").load("articles/rating.html", () => {
     initRating();
+    initalizeRating();
   });
   $("#demo-uxstars").load("articles/uxstars.html");
   $("#demo-tooltip").load("articles/tooltip.html");
@@ -18,6 +19,15 @@ $(document).ready(function () {
   $("#demo-snippet").load("articles/snippet.html");
 });
 
+// RATING
+function initalizeRating() {
+  document.addEventListener("onChange", (e) => {
+    document.getElementById(e.srcElement.id + "-selection").innerText = e.detail;
+  }, false);
+  document.addEventListener("onMouseOver", (e) => {
+    document.getElementById(e.srcElement.id + "-hover").innerText = e.detail;
+  }, false);
+}
 
 // UXSTARS
 function resetUxstars(idElem) {

@@ -1,4 +1,4 @@
-import { Component, Prop, Method, State } from '@stencil/core';
+import { Component, Prop, Method, State, Event, EventEmitter } from '@stencil/core';
 
 @Component({
   tag: 'pea11y-rating'
@@ -7,7 +7,7 @@ export class Rating {
 
   // Parametres
   @Prop() max: number = 5;
-  @Prop({ mutable: true }) value: number = 0;
+  @Prop({ mutable: true }) value: number;
   @Prop() allowEmpty: boolean = true;
   @Prop() readonly: boolean = false;
   @Prop() textValues: any;
@@ -17,32 +17,44 @@ export class Rating {
   @Prop() templateHover: string = "★";
   @Prop() templateEmpty: string = "☆";
 
-  @State() hoveredValue: number = 0;
+  @State() hoveredValue: number;
+  @Event() onChange: EventEmitter;
+  @Event() onMouseOver: EventEmitter;
 
   @Method()
-  set(newValue: number) {
+  setValue(newValue: number) {
     this.value = newValue;
+    this.onChange.emit(newValue);
+  }
+
+  componentWillLoad() {
+    this.setValue(0);
+    this.setHoveredValue(0);
+  }
+
+  setHoveredValue(newValue: number) {
+    this.hoveredValue = newValue;
+    this.onMouseOver.emit(newValue);
   }
 
   onMouseOverElement(event: any) {
     event.preventDefault();
-    this.hoveredValue = parseInt(event.srcElement.dataset.id) + 1;
-    // opts.onmouseover.call();
+    this.setHoveredValue(parseInt(event.srcElement.dataset.id) + 1);
   }
 
   onClickOverElement(event: any) {
     event.preventDefault();
     var elementId = event.srcElement.dataset.id;
     if (this.allowEmpty && parseInt(elementId) + 1 === this.value) {
-      this.value = 0;
+      this.setValue(0);
     } else {
-      this.value = parseInt(elementId) + 1;
+      this.setValue(parseInt(elementId) + 1);
     }
   }
 
   onMouseLeave(event: any) {
     event.preventDefault();
-    this.hoveredValue = 0;
+    this.setHoveredValue(0);
   }
 
   renderElement(index: number) {
