@@ -1,0 +1,7 @@
+<div id="basic" class="pe-a11y-rating"></div>
+<p aria-hidden="true"> Selection:
+  <span id="selection-basic">
+  </span>
+  <br> Hover:
+  <span id="hover-basic"> </span>
+</p>

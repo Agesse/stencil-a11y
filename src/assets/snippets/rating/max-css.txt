@@ -1,10 +1,6 @@
-.pe-a11y-rating {
+pea11y-rating {
   cursor: pointer;
   display: inline-block;
   font-size: larger;
 }
 
-#basic-max.pe-a11y-rating .hover {
-  border-radius: 5px;
-  background: grey;
-}

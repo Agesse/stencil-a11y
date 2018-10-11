@@ -1,16 +1,6 @@
-$("#basic").peA11yRating(
-  {
-    label: "Exemple de rating",
-    onmouseover: onmouseoverBasic,
-    onmouseleave: onmouseoverBasic,
-    onchange: onchangeBasic
-  }
-);
-function onmouseoverBasic() {
-  $("#hover-basic").text($("#basic").peA11yRating("getHoveredValue"));
-}
-function onchangeBasic() {
-  $("#selection-basic").text($("#basic").peA11yRating("getValue"));
-}
-onmouseoverBasic();
-onchangeBasic();
+document.addEventListener("onChange", (e) => {
+    document.getElementById(e.srcElement.id + "-selection").innerText = e.detail;
+}, false);
+document.addEventListener("onMouseOver", (e) => {
+    document.getElementById(e.srcElement.id + "-hover").innerText = e.detail;
+}, false);

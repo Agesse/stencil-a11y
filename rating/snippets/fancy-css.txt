@@ -1,14 +1,14 @@
-pea11y-rating {
+.pe-a11y-rating {
   cursor: pointer;
   display: inline-block;
   font-size: larger;
 }
 
-#pea11y-rating-readonly {
+#readonly.pe-a11y-rating {
   cursor: default;
 }
 
-.pea11y-rating-fancy-label {
+#selection-fancy {
   vertical-align: text-bottom;
   margin-left: 15px;
   color: #4a4a4a;

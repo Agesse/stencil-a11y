@@ -1,7 +1,13 @@
-<label id="label-basic-max">Notez le film sur 8</label>
-<div id="basic-max" class="pe-a11y-rating"></div>
-<button onclick="reset('#basic-max')">Reinitialiser</button>
+<span id="label-basic-max">Notez le film sur 8 <br></span>
+<pea11y-rating id="pea11y-rating-max"
+               labelledby="label-basic-max"
+               max="8"
+               value="3"></pea11y-rating>
+<button onclick="resetRating('pea11y-rating-max')">Reinitialiser<span class="sr-only"> la note
+    du film</span></button>
 <p aria-hidden="true">
   Selection:
-  <span id="selection-basic-max"> </span>
+  <span id="pea11y-rating-max-selection"> </span>
+  <br> Hover:
+  <span id="pea11y-rating-max-hover"> </span>
 </p>

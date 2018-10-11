@@ -15,7 +15,7 @@
    y="0px"
    viewBox="0 0 512.00078 493.278"
    xml:space="preserve"
-   sodipodi:docname="star-empty.svg"
+   sodipodi:docname="star-hover.svg"
    width="512.00079"
    height="493.27802"
    inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"><metadata
@@ -45,8 +45,15 @@
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="Layer_1" /><path
-     style="fill:#808285;fill-opacity:1"
+     inkscape:current-layer="Layer_1"
+     inkscape:snap-page="true"
+     inkscape:snap-nodes="false"
+     inkscape:snap-others="false"
+     inkscape:snap-bbox="true"
+     inkscape:bbox-paths="true"
+     inkscape:bbox-nodes="true"
+     inkscape:snap-bbox-edge-midpoints="false" /><path
+     style="fill:#ffb123;fill-opacity:1"
      d="m 400.0692,493.278 c -3.551,0 -7.116,-0.825 -10.398,-2.5 l -133.671,-68.19 -133.671,68.19 c -3.283,1.675 -6.848,2.5 -10.399,2.5 -4.728,0 -9.431,-1.464 -13.407997,-4.336 -6.961,-5.031 -10.52,-13.537 -9.215,-22.026 L 112.3022,317.268 6.5782033,209.874 c -6.00199997,-6.096 -8.103,-15.031 -5.446,-23.163 2.656,-8.131 9.6259997,-14.103 18.0689997,-15.481 L 167.1132,147.092 235.6032,12.507 C 239.5072,4.832 247.3892,0 256.0002,0 c 8.611,0 16.493,4.833 20.396,12.507 l 68.49,134.585 147.913,24.138 c 8.444,1.378 15.413,7.35 18.07,15.481 2.656,8.132 0.555,17.067 -5.447,23.163 l -105.723,107.392 22.993,149.648 c 1.305,8.49 -2.254,16.995 -9.215,22.026 -3.976,2.873 -8.68,4.338 -13.408,4.338 z"
      id="path2"
      inkscape:connector-curvature="0" /><g

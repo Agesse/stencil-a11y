@@ -12,7 +12,6 @@ import '@stencil/core';
 export namespace Components {
 
   interface Pea11yRating {
-    'allowEmpty': boolean;
     'label': string;
     'labelledby': string;
     'max': number;
@@ -25,7 +24,6 @@ export namespace Components {
     'value': number;
   }
   interface Pea11yRatingAttributes extends StencilHTMLAttributes {
-    'allowEmpty'?: boolean;
     'label'?: string;
     'labelledby'?: string;
     'max'?: number;

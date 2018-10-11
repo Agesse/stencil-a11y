@@ -36,17 +36,7 @@
     </tr>
     <tr>
       <td>
-        <code>allow-empty</code>
-      </td>
-      <td>Autorise ou non 0 comme valeur sélectionnable.</td>
-      <td>
-        <code>boolean</code>
-      </td>
-      <td>true</td>
-    </tr>
-    <tr>
-      <td>
-        <code>readOnly</code>
+        <code>readonly</code>
       </td>
       <td>Mode lecture seule.</td>
       <td>
@@ -117,7 +107,36 @@
   </tbody>
 </table>
 
-<pea11y-rating id="pea11y-rating-basic" label="Notez sur 5 ce restaurant"></pea11y-rating>
+<table aria-hidden="true">
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Description</th>
+      <th>Retour</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>@onChange</code>
+      </td>
+      <td>Evènement déclenché lors d’un changement de la valeur sélectionnée. <br> Envoie la valeur sélectionnée.</td>
+      <td><code>int</code></td>
+    </tr>
+    <tr>
+      <td>
+        <code>@onMouseOver</code>
+      </td>
+      <td>Evènement déclenché lors d’un changement de la valeur survolée. <br> Envoie la valeur survolée.</td>
+      <td><code>int</code></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<pea11y-rating id="pea11y-rating-basic"
+               label="Notez sur 5 ce restaurant"></pea11y-rating>
 <p aria-hidden="true">
   Selection:
   <span id="pea11y-rating-basic-selection"> </span>
@@ -125,32 +144,58 @@
   <span id="pea11y-rating-basic-hover"> </span>
 </p>
 
-<pea11y-snippet aria-hidden="true" data-html="assets/snippets/rating/basic-html.txt" data-js="assets/snippets/rating/basic-js.txt"
-  data-css="assets/snippets/rating/basic-css.txt"></pea11y-snippet>
+<pea11y-snippet aria-hidden="true"
+                data-html="assets/snippets/rating/basic-html.txt"
+                data-js="assets/snippets/rating/basic-js.txt"
+                data-css="assets/snippets/rating/basic-css.txt"></pea11y-snippet>
+
 
 
 <br>
 <span id="label-basic-max">Notez le film sur 8 <br></span>
-<div id="basic-max" class="pe-a11y-rating"></div>
-<button onclick="reset('#basic-max')">Reinitialiser<span class="sr-only"> la note du film</span></button>
+<pea11y-rating id="pea11y-rating-max"
+               labelledby="label-basic-max"
+               max="8"
+               value="3"></pea11y-rating>
+<button onclick="resetRating('pea11y-rating-max')">Reinitialiser<span class="sr-only"> la note
+    du film</span></button>
 <p aria-hidden="true">
   Selection:
-  <span id="selection-basic-max"> </span>
+  <span id="pea11y-rating-max-selection"> </span>
+  <br> Hover:
+  <span id="pea11y-rating-max-hover"> </span>
 </p>
-<pea11y-snippet aria-hidden="true" data-html="assets/snippets/rating/max-html.txt" data-js="assets/snippets/rating/max-js.txt"
-  data-css="assets/snippets/rating/max-css.txt"></pea11y-snippet>
+
+<pea11y-snippet aria-hidden="true"
+                data-html="assets/snippets/rating/max-html.txt"
+                data-js="assets/snippets/rating/max-js.txt"
+                data-css="assets/snippets/rating/max-css.txt"></pea11y-snippet>
+
+
 
 <br>
-<div id="fancy" class="pe-a11y-rating"></div>
-<span aria-hidden="true" id="selection-fancy"></span>
-<div class="small" aria-hidden="true">Icons made by
-  <a href="http://www.freepik.com" title="Freepik">Freepik</a> from
-  <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by
-  <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a>
-</div>
+<pea11y-rating id="pea11y-rating-fancy"
+               label="Niveau de connaissance de la compétence Charger des produits"
+               max="3"
+               template-selected="<img src='assets/img/star.svg' height='20px' width='20px'>"
+               template-empty="<img src='assets/img/star-empty.svg' height='20px' width='20px'>"
+               template-hover="<img src='assets/img/star-hover.svg' height='20px' width='20px'>"></pea11y-rating>
+<span id="pea11y-rating-fancy-selection"
+      class="pea11y-rating-fancy-label"></span>
+
 
 <br> Lecture seule :
-<div id="readonly" class="pe-a11y-rating"></div>
-<span id="selection-readonly" aria-hidden="true"></span>
-<pea11y-snippet aria-hidden="true" data-html="assets/snippets/rating/fancy-html.txt" data-js="assets/snippets/rating/fancy-js.txt"
-  data-css="assets/snippets/rating/fancy-css.txt"></pea11y-snippet>
+<pea11y-rating id="pea11y-rating-readonly"
+               readonly="true"
+               label="Niveau de connaissance de la compétence Savoir travailler en équipe"
+               max="3"
+               value="2"
+               template-selected="<img src='assets/img/star.svg' height='20px' width='20px'>"
+               template-empty="<img src='assets/img/star-empty.svg' height='20px' width='20px'>"
+               template-hover="<img src='assets/img/star-hover.svg' height='20px' width='20px'>"></pea11y-rating>
+<span id="pea11y-rating-readonly-selection"
+      class="pea11y-rating-fancy-label"></span>
+<pea11y-snippet aria-hidden="true"
+                data-html="assets/snippets/rating/fancy-html.txt"
+                data-js="assets/snippets/rating/fancy-js.txt"
+                data-css="assets/snippets/rating/fancy-css.txt"></pea11y-snippet>

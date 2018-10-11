@@ -2,7 +2,6 @@
 
 $(document).ready(function () {
   $("#demo-rating").load("articles/rating.html", () => {
-    initRating();
     initalizeRating();
   });
   $("#demo-uxstars").load("articles/uxstars.html");
@@ -21,12 +20,25 @@ $(document).ready(function () {
 
 // RATING
 function initalizeRating() {
+  var textValues = ["Non renseigné", "Débutant", "Intermédiaire", "Avancé"];
+  document.getElementById("pea11y-rating-fancy").setAttribute("text-values", textValues);
+  document.getElementById("pea11y-rating-readonly").setAttribute("text-values", textValues);
   document.addEventListener("onChange", (e) => {
-    document.getElementById(e.srcElement.id + "-selection").innerText = e.detail;
+    if (e.srcElement.id.includes("fancy") || e.srcElement.id.includes("readonly")) {
+      document.getElementById(e.srcElement.id + "-selection").innerText = textValues[e.detail];
+    } else {
+      document.getElementById(e.srcElement.id + "-selection").innerText = e.detail;
+    }
   }, false);
   document.addEventListener("onMouseOver", (e) => {
-    document.getElementById(e.srcElement.id + "-hover").innerText = e.detail;
+    if (!e.srcElement.id.includes("fancy") && !e.srcElement.id.includes("readonly")) {
+      document.getElementById(e.srcElement.id + "-hover").innerText = e.detail;
+    }
   }, false);
+}
+
+function resetRating(id) {
+  document.getElementById(id).setValue(0);
 }
 
 // UXSTARS

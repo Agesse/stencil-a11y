@@ -3,50 +3,45 @@ Specifications du composant
 
 ARIA Pattern
 ------------
-Ce composant respecte le pattern ARIA "slider" :
-* FLECHE DROITE : augmente la valeur de 1
-* FLECHE HAUT : augmente la valeur de 1
-* FLECHE GAUCHE : diminue la valeur de 1
-* FLECHE BAS : diminue la valeur de 1
-* HOME : selectionne la valeur minimale
-* END : selectionne la valeur maximale
-* Le focus est mis sur le slider, l'objet qui visuellement bouge (donc l'icone en cours)
-* L'element slider qui a le focus a le role *slider*
-* L'element slider a une propriete *aria-valuenow* representant la valeur courante
-* L'element slider a une propriete *aria-valuemin* representant la valeur minimum autorisee
-* L'element slider a une propriete *aria-valuemax* representant la valeur maximum autorisee
-* Si la valeur de *aria-valuenow* est peu comprehensible, on peut ajouter une propriete *aria-valuetext* avec une valeur en string
-* Si le slider a un label visible, il est indique via *aria-labelledby*, sinon il faut un *aria-label*
+Ce composant respecte le pattern ARIA "Radio button" :
+* OK : FLECHE DROITE et BAS : bouge le focus a la valeur suivante, decoche la valeur en cours et coche la suivante. Boucle sur les valeurs.
+* OK : FLECHE GAUCHE et HAUT : bouge le focus a la valeur precedente, decoche la valeur en cours et coche la precedente. Boucle sur les valeurs.
+* OK : ESPACE : selectionne la valeur
+
+* OK : Quand un groupe de bouton radio recoit le focus, si une valeur etait deja selectionnee, focus la valeur, sinon focus le premier element.
+* OK : Les boutons radios sont contenus dans un element avec un role "radiogroup"
+* OK : Chaque element bouton radio a le role "radio"
+* OK : Si un bouton radio est coche, son attribut *aria-checked* est "true", sinon "false"
+* OK : Chaque bouton radio a un label specifie via *aria-label*
+* OK : Le groupe de boutons radios a un label via *aria-label* ou un label visible reference par *aria-labelledby*
 
 Donnees
 -------
-* La valeur est recuperable
-* Possibilite de preselectionner une valeur
-* Possibilite de changer la valeur selectionnee
-* Possibilite de choisir que 0 n'est pas autorise, dans ce cas cliquer a nouveau sur la valeur ne fait rien (**A REVOIR ??**)
-* Possibilite de connaitre la valeur survolee
+* OK : La valeur selectionnee est recuperable
+* OK : Possibilite de preselectionner une valeur
+* OK : Possibilite de changer la valeur selectionnee
+* OK : Possibilite de connaitre la valeur survolee
 
 Affichage
 ---------
-* Possibilite de changer le nombre d'icones
-* Possibilite de changer la forme de l'icone
-* Ajout d'une classe sur l'icone survolee
-* Possibilite de choisir un template HTML pour les icones selectionnees
-* Possibilite de choisir un template HTML pour les icones vides
-* Possibilite de choisir un template HTML pour les icones survolees
+* OK : Possibilite de changer le nombre d'icones
+* OK : Possibilite de choisir un template HTML pour les icones selectionnees
+* OK: Possibilite de choisir un template HTML pour les icones vides
+* OK: Possibilite de choisir un template HTML pour les icones survolees
 
 Souris
 ------
-* Cliquer sur la valeur deja selectionnee reset le composant
-* Les icones changent au passage de la souris
+* OK : CLICK : selectionne la valeur
+* OK : MOUSEOVER : les icones de la 1ere a celle survolee adoptent le template HTML pour icone survolee
+* OK : MOUSEOUT : le survol est reinitialise
 
 Clavier
 -------
-* Le composant est accessible au clavier via TAB sauf s'il est readonly
+* OK : Le composant est accessible au clavier via TAB sauf s'il est readonly
 
 Formulaire
 ----------
-* Possibilite de mettre le composant en "readonly"
+* OK : Possibilite de mettre le composant en "readonly"
 
 NgModel
 -------
@@ -59,6 +54,5 @@ NgModel
 
 NVDA
 ----
-* On peut surcharger les noms lus dans NVDA
-* En mode readonly NVDA ne lit que le label et la valeur
-* On peut surcharger le label
+* OK : On peut surcharger les noms lus dans NVDA
+* KO : En mode readonly NVDA ne lit que le label et la valeur (**manque le labelledby**)
