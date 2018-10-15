@@ -64,17 +64,26 @@ pea11y-rating {
   cursor: pointer;
   display: inline-block;
   font-size: larger;
+  vertical-align: sub;
 }
 
 #pea11y-rating-readonly {
   cursor: default;
 }
 
-.pea11y-rating-fancy-label {
-  vertical-align: text-bottom;
-  margin-left: 15px;
+.-rating-flex-item {
   color: #4a4a4a;
-  font-size: large;
+  font-size: medium;
+  flex-grow: 0;
+}
+
+.rating-flex-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.rating-flex-container pea11y-rating {
+  margin-right: 10px;
 }
 
 /* Snippets de code */

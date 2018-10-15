@@ -14,8 +14,7 @@
     "dist/esm",
     "dist/collection/interface.js",
     "dist/collection/collection-manifest.json",
-    "dist/collection/components",
-    "rating"
+    "dist/collection/components"
   ],
   "author": "shirley.noel@pole-emploi.fr",
   "license": "MIT",

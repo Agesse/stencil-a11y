@@ -3,10 +3,6 @@ exports.config = {
   namespace: "pea11y",
   copy: [
     {
-      src: '../rating',
-      dest: "rating"
-    },
-    {
       src: "articles"
     },
     {

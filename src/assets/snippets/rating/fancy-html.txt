@@ -1,19 +1,32 @@
-<pea11y-rating id="pea11y-rating-fancy"
-               label="Niveau de connaissance de la compétence Charger des produits"
-               max="3"
-               template-selected="<img src='assets/img/star.svg' height='20px' width='20px'>"
-               template-empty="<img src='assets/img/star-empty.svg' height='20px' width='20px'>"
-               template-hover="<img src='assets/img/star-hover.svg' height='20px' width='20px'>"></pea11y-rating>
-<span id="pea11y-rating-fancy-selection"
-      class="pea11y-rating-fancy-label"></span>
+<div class="rating-flex-container">
+  <span class="rating-flex-item"
+        id="pea11y-rating-fancy-competence">Niveau de connaissance de la compétence "Charger des produits"</span>
+  <div class="rating-flex-item">
+    <pea11y-rating id="pea11y-rating-fancy"
+                   labelledby="pea11y-rating-fancy-competence"
+                   max="3"
+                   template-selected="<img src='assets/img/star.svg' height='20px' width='20px'>"
+                   template-empty="<img src='assets/img/star-empty.svg' height='20px' width='20px'>"
+                   template-hover="<img src='assets/img/star-hover.svg' height='20px' width='20px'>"></pea11y-rating>
+    <span id="pea11y-rating-fancy-selection"></span>
+  </div>
+</div>
 
 
-<br> Lecture seule :
-<pea11y-rating id="pea11y-rating-readonly"
-               readonly="true"
-               label="Niveau de connaissance de la compétence Savoir travailler en équipe"
-               max="3"
-               value="2"
-               template-selected="<img src='assets/img/star.svg' height='20px' width='20px'>"
-               template-empty="<img src='assets/img/star-empty.svg' height='20px' width='20px'>"
-               template-hover="<img src='assets/img/star-hover.svg' height='20px' width='20px'>"></pea11y-rating>
+<div class="rating-flex-container">
+  <span class="rating-flex-item"
+        id="pea11y-rating-fancy-competence">Niveau de connaissance de la compétence Savoir travailler en équipe
+    (lecture
+    seule)</span>
+  <div class="rating-flex-item">
+    <pea11y-rating id="pea11y-rating-readonly"
+                   readonly="true"
+                   label="Niveau de connaissance de la compétence Savoir travailler en équipe (lecture seule)"
+                   max="3"
+                   value="2"
+                   template-selected="<img src='assets/img/star.svg' height='20px' width='20px'>"
+                   template-empty="<img src='assets/img/star-empty.svg' height='20px' width='20px'>"
+                   template-hover="<img src='assets/img/star-hover.svg' height='20px' width='20px'>"></pea11y-rating>
+    <span id="pea11y-rating-readonly-selection"></span>
+  </div>
+</div>
