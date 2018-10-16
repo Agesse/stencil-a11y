@@ -67,11 +67,16 @@ pea11y-rating {
   vertical-align: sub;
 }
 
+.pea11y-rating-label {
+  margin-bottom: 0;
+  font-size: larger;
+}
+
 #pea11y-rating-readonly {
   cursor: default;
 }
 
-.-rating-flex-item {
+.rating-flex-item {
   color: #4a4a4a;
   font-size: medium;
   flex-grow: 0;

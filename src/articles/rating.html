@@ -134,7 +134,7 @@
 </table>
 
 
-
+<p class="pea11y-rating-label">Notez sur 5 ce restaurant</p>
 <pea11y-rating id="pea11y-rating-basic"
                label="Notez sur 5 ce restaurant"></pea11y-rating>
 <p aria-hidden="true">
@@ -152,13 +152,18 @@
 
 
 <br>
-<span id="label-basic-max">Notez le film sur 8 <br></span>
+<p id="pea11y-rating-max-label"
+   class="pea11y-rating-label">Notez le film sur 8</p>
 <pea11y-rating id="pea11y-rating-max"
-               labelledby="label-basic-max"
+               labelledby="pea11y-rating-max-label"
                max="8"
                value="3"></pea11y-rating>
-<button onclick="resetRating('pea11y-rating-max')">Reinitialiser<span class="sr-only"> la note
+<button type="button"
+        onclick="resetRating('pea11y-rating-max')">Reinitialiser<span class="sr-only"> la note
     du film</span></button>
+<div id="pea11y-rating-aria-live"
+     class="sr-only"
+     aria-live="polite"></div>
 <p aria-hidden="true">
   Selection:
   <span id="pea11y-rating-max-selection"> </span>
@@ -181,9 +186,9 @@
     <pea11y-rating id="pea11y-rating-fancy"
                    labelledby="pea11y-rating-fancy-competence"
                    max="3"
-                   template-selected="<img src='assets/img/star.svg' height='20px' width='20px'>"
-                   template-empty="<img src='assets/img/star-empty.svg' height='20px' width='20px'>"
-                   template-hover="<img src='assets/img/star-hover.svg' height='20px' width='20px'>"></pea11y-rating>
+                   template-selected="<img src='assets/img/star.svg' height='20' width='20' alt=''>"
+                   template-empty="<img src='assets/img/star-empty.svg' height='20' width='20' alt=''>"
+                   template-hover="<img src='assets/img/star-hover.svg' height='20' width='20' alt=''>"></pea11y-rating>
     <span id="pea11y-rating-fancy-selection"></span>
   </div>
 </div>
@@ -200,9 +205,9 @@
                    label="Niveau de connaissance de la compétence Savoir travailler en équipe (lecture seule)"
                    max="3"
                    value="2"
-                   template-selected="<img src='assets/img/star.svg' height='20px' width='20px'>"
-                   template-empty="<img src='assets/img/star-empty.svg' height='20px' width='20px'>"
-                   template-hover="<img src='assets/img/star-hover.svg' height='20px' width='20px'>"></pea11y-rating>
+                   template-selected="<img src='assets/img/star.svg' height='20' width='20' alt=''>"
+                   template-empty="<img src='assets/img/star-empty.svg' height='20' width='20' alt=''>"
+                   template-hover="<img src='assets/img/star-hover.svg' height='20' width='20' alt=''>"></pea11y-rating>
     <span id="pea11y-rating-readonly-selection"></span>
   </div>
 </div>
