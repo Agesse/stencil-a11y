@@ -60,16 +60,31 @@ pre>code {
   font-size: smaller;
 }
 
+/** Rating **/
+
 pea11y-rating {
-  cursor: pointer;
   display: inline-block;
-  font-size: larger;
-  vertical-align: sub;
+}
+
+pea11y-rating label {
+  cursor: pointer !important;
+}
+
+pea11y-rating .rating-empty {
+  color: #a7a9ac;
+}
+
+pea11y-rating .rating-selected {
+  color: #f8d66e;
+}
+
+pea11y-rating .rating-hover {
+  color: #f9bc0b;
 }
 
 .pea11y-rating-label {
   margin-bottom: 0;
-  font-size: larger;
+  font-size: medium;
 }
 
 #pea11y-rating-readonly {
@@ -79,7 +94,6 @@ pea11y-rating {
 .rating-flex-item {
   color: #4a4a4a;
   font-size: medium;
-  flex-grow: 0;
 }
 
 .rating-flex-container {

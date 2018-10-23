@@ -29,10 +29,6 @@ function initalizeRating() {
     } else {
       document.getElementById(e.srcElement.id + "-selection").innerText = e.detail;
     }
-    if (e.srcElement.id.includes("max") && e.detail !== 0 && document.getElementById("pea11y-rating-aria-live").firstChild) {
-      console.log(e.detail);
-      document.getElementById("pea11y-rating-aria-live").removeChild(document.getElementById("pea11y-rating-aria-live").firstChild);
-    }
   }, false);
   document.addEventListener("onMouseOver", (e) => {
     if (!e.srcElement.id.includes("fancy") && !e.srcElement.id.includes("readonly")) {
@@ -48,6 +44,10 @@ function resetRating(id) {
     p.innerText = "Note du film réinitialisée";
     document.getElementById("pea11y-rating-aria-live").appendChild(p);
   }
+}
+
+function resetAriaLive(id) {
+  document.getElementById(id).removeChild(document.getElementById(id).firstChild);
 }
 
 // UXSTARS

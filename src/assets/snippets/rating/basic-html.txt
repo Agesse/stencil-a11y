@@ -1,5 +1,7 @@
+<p id="pea11y-rating-basic-label"
+   class="pea11y-rating-label">Notez sur 5 ce restaurant</p>
 <pea11y-rating id="pea11y-rating-basic"
-               label="Notez sur 5 ce restaurant"></pea11y-rating>
+               labelledby="pea11y-rating-basic-label"></pea11y-rating>
 <p aria-hidden="true">
   Selection:
   <span id="pea11y-rating-basic-selection"> </span>

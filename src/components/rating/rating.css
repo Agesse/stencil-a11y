@@ -1,4 +1,4 @@
-.sr-only {
+pea11y-rating .sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -7,4 +7,27 @@
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
+}
+
+pea11y-rating label {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+pea11y-rating input[type="radio"] {
+  position: fixed;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+pea11y-rating .pea11y-rating-input {
+  display: inline;
+}
+
+pea11y-rating input:focus~.pea11y-rating-checkmark {
+  outline: -webkit-focus-ring-color auto 5px;
+  ;
 }

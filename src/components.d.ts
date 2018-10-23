@@ -12,27 +12,27 @@ import '@stencil/core';
 export namespace Components {
 
   interface Pea11yRating {
+    'classEmpty': string;
+    'classHover': string;
+    'classSelected': string;
     'label': string;
     'labelledby': string;
     'max': number;
     'readonly': boolean;
     'setValue': (newValue: number) => void;
-    'templateEmpty': string;
-    'templateHover': string;
-    'templateSelected': string;
     'textValues': any;
     'value': number;
   }
   interface Pea11yRatingAttributes extends StencilHTMLAttributes {
+    'classEmpty'?: string;
+    'classHover'?: string;
+    'classSelected'?: string;
     'label'?: string;
     'labelledby'?: string;
     'max'?: number;
     'onOnChange'?: (event: CustomEvent) => void;
     'onOnMouseOver'?: (event: CustomEvent) => void;
     'readonly'?: boolean;
-    'templateEmpty'?: string;
-    'templateHover'?: string;
-    'templateSelected'?: string;
     'textValues'?: any;
     'value'?: number;
   }

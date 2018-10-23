@@ -7,4 +7,13 @@ document.addEventListener("onMouseOver", (e) => {
 
 function resetRating(id) {
   document.getElementById(id).setValue(0);
+  if (!document.getElementById("pea11y-rating-aria-live").firstChild) {
+    var p = document.createElement("p");
+    p.innerText = "Note du film réinitialisée";
+    document.getElementById("pea11y-rating-aria-live").appendChild(p);
+  }
+}
+
+function resetAriaLive(id) {
+  document.getElementById(id).removeChild(document.getElementById(id).firstChild);
 }

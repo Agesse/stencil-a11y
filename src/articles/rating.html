@@ -1,6 +1,6 @@
 <h2>Notation</h2>
-<p>Composant de type potentiomètre permettant de choisir un score avec les flèches ou à la souris.<br>
-  Il est obligatoire de renseigner soit l'attribut label, soit l'attribut labelledBy, sinon le composant sera en erreur
+<p>Composant permettant de choisir un score avec les flèches ou à la souris.<br>
+  Il est obligatoire de renseigner soit l'attribut label, soit l'attribut labelledby, sinon le composant sera en erreur
   pour des raisons d'accessibilité.
 </p>
 
@@ -76,33 +76,33 @@
     </tr>
     <tr>
       <td>
-        <code>template-selected</code>
+        <code>class-selected</code>
       </td>
-      <td>Template HTML appliqué de la 1ère icône à l'icône dont la valeur est sélectionnée.</td>
+      <td>Classes CSS appliquées de la 1ère icône à l'icône dont la valeur est sélectionnée.</td>
       <td>
         <code>string</code>
       </td>
-      <td>"★"</td>
+      <td>"fas fa-star"</td>
     </tr>
     <tr>
       <td>
-        <code>template-empty</code>
+        <code>class-empty</code>
       </td>
-      <td>Template HTML appliqué aux icônes après la valeur sélectionnée.</td>
+      <td>Classes CSS appliquées aux icônes après la valeur sélectionnée.</td>
       <td>
         <code>string</code>
       </td>
-      <td>"☆"</td>
+      <td>"far fa-star"</td>
     </tr>
     <tr>
       <td>
-        <code>template-hover</code>
+        <code>class-hover</code>
       </td>
-      <td>Template HTML appliqué de la 1ère icône à l'icône survolée.</td>
+      <td>Classes CSS appliquées de la 1ère icône à l'icône survolée.</td>
       <td>
         <code>string</code>
       </td>
-      <td>"★"</td>
+      <td>"fas fa-star"</td>
     </tr>
   </tbody>
 </table>
@@ -134,9 +134,10 @@
 </table>
 
 
-<p class="pea11y-rating-label">Notez sur 5 ce restaurant</p>
+<p id="pea11y-rating-basic-label"
+   class="pea11y-rating-label">Notez sur 5 ce restaurant</p>
 <pea11y-rating id="pea11y-rating-basic"
-               label="Notez sur 5 ce restaurant"></pea11y-rating>
+               labelledby="pea11y-rating-basic-label"></pea11y-rating>
 <p aria-hidden="true">
   Selection:
   <span id="pea11y-rating-basic-selection"> </span>
@@ -159,7 +160,8 @@
                max="8"
                value="3"></pea11y-rating>
 <button type="button"
-        onclick="resetRating('pea11y-rating-max')">Reinitialiser<span class="sr-only"> la note
+        onclick="resetRating('pea11y-rating-max')"
+        onblur="resetAriaLive('pea11y-rating-aria-live')">Reinitialiser<span class="sr-only"> la note
     du film</span></button>
 <div id="pea11y-rating-aria-live"
      class="sr-only"
@@ -181,14 +183,14 @@
 <br>
 <div class="rating-flex-container">
   <span class="rating-flex-item"
-        id="pea11y-rating-fancy-competence">Niveau de connaissance de la compétence "Charger des produits"</span>
+        id="pea11y-rating-fancy-label">Niveau de connaissance de la compétence "Charger des produits"</span>
   <div class="rating-flex-item">
     <pea11y-rating id="pea11y-rating-fancy"
-                   labelledby="pea11y-rating-fancy-competence"
+                   labelledby="pea11y-rating-fancy-label"
                    max="3"
-                   template-selected="<img src='assets/img/star.svg' height='20' width='20' alt=''>"
-                   template-empty="<img src='assets/img/star-empty.svg' height='20' width='20' alt=''>"
-                   template-hover="<img src='assets/img/star-hover.svg' height='20' width='20' alt=''>"></pea11y-rating>
+                   class-selected="fas fa-star rating-selected"
+                   class-empty="fas fa-star rating-empty"
+                   class-hover="fas fa-star rating-hover"></pea11y-rating>
     <span id="pea11y-rating-fancy-selection"></span>
   </div>
 </div>
@@ -196,18 +198,17 @@
 
 <div class="rating-flex-container">
   <span class="rating-flex-item"
-        id="pea11y-rating-fancy-competence">Niveau de connaissance de la compétence Savoir travailler en équipe
+        id="pea11y-rating-fancy-label">Niveau de connaissance de la compétence "Savoir travailler en équipe"
     (lecture
     seule)</span>
   <div class="rating-flex-item">
     <pea11y-rating id="pea11y-rating-readonly"
                    readonly="true"
-                   label="Niveau de connaissance de la compétence Savoir travailler en équipe (lecture seule)"
+                   labelledby="pea11y-rating-readonly-label"
                    max="3"
                    value="2"
-                   template-selected="<img src='assets/img/star.svg' height='20' width='20' alt=''>"
-                   template-empty="<img src='assets/img/star-empty.svg' height='20' width='20' alt=''>"
-                   template-hover="<img src='assets/img/star-hover.svg' height='20' width='20' alt=''>"></pea11y-rating>
+                   class-selected="fas fa-star rating-selected"
+                   class-empty="fas fa-star rating-empty"></pea11y-rating>
     <span id="pea11y-rating-readonly-selection"></span>
   </div>
 </div>

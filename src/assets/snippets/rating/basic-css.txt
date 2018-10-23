@@ -1,5 +1,12 @@
 pea11y-rating {
-  cursor: pointer;
   display: inline-block;
-  font-size: larger;
+}
+
+pea11y-rating label {
+  cursor: pointer !important;
+}
+
+.pea11y-rating-label {
+  margin-bottom: 0;
+  font-size: medium;
 }
