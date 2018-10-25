@@ -134,10 +134,8 @@
 </table>
 
 
-<p id="pea11y-rating-basic-label"
-   class="pea11y-rating-label">Notez sur 5 ce restaurant</p>
-<pea11y-rating id="pea11y-rating-basic"
-               labelledby="pea11y-rating-basic-label"></pea11y-rating>
+<p id="pea11y-rating-basic-label" class="pea11y-rating-label">Notez sur 5 ce restaurant</p>
+<pea11y-rating id="pea11y-rating-basic" labelledby="pea11y-rating-basic-label"></pea11y-rating>
 <p aria-hidden="true">
   Selection:
   <span id="pea11y-rating-basic-selection"> </span>
@@ -145,27 +143,18 @@
   <span id="pea11y-rating-basic-hover"> </span>
 </p>
 
-<pea11y-snippet aria-hidden="true"
-                data-html="assets/snippets/rating/basic-html.txt"
-                data-js="assets/snippets/rating/basic-js.txt"
-                data-css="assets/snippets/rating/basic-css.txt"></pea11y-snippet>
+<pea11y-snippet aria-hidden="true" data-html="assets/snippets/rating/basic-html.txt" data-js="assets/snippets/rating/basic-js.txt"
+  data-css="assets/snippets/rating/basic-css.txt"></pea11y-snippet>
 
 
 
 <br>
-<p id="pea11y-rating-max-label"
-   class="pea11y-rating-label">Notez le film sur 8</p>
-<pea11y-rating id="pea11y-rating-max"
-               labelledby="pea11y-rating-max-label"
-               max="8"
-               value="3"></pea11y-rating>
-<button type="button"
-        onclick="resetRating('pea11y-rating-max')"
-        onblur="resetAriaLive('pea11y-rating-aria-live')">Reinitialiser<span class="sr-only"> la note
+<p id="pea11y-rating-max-label" class="pea11y-rating-label">Notez le film sur 8</p>
+<pea11y-rating id="pea11y-rating-max" labelledby="pea11y-rating-max-label" max="8" value="3"></pea11y-rating>
+<button type="button" onclick="resetRating('pea11y-rating-max')" onblur="resetAriaLive('pea11y-rating-aria-live')">Reinitialiser<span
+    class="sr-only"> la note
     du film</span></button>
-<div id="pea11y-rating-aria-live"
-     class="sr-only"
-     aria-live="polite"></div>
+<div id="pea11y-rating-aria-live" class="sr-only" aria-live="polite"></div>
 <p aria-hidden="true">
   Selection:
   <span id="pea11y-rating-max-selection"> </span>
@@ -173,47 +162,35 @@
   <span id="pea11y-rating-max-hover"> </span>
 </p>
 
-<pea11y-snippet aria-hidden="true"
-                data-html="assets/snippets/rating/max-html.txt"
-                data-js="assets/snippets/rating/max-js.txt"
-                data-css="assets/snippets/rating/max-css.txt"></pea11y-snippet>
+<pea11y-snippet aria-hidden="true" data-html="assets/snippets/rating/max-html.txt" data-js="assets/snippets/rating/max-js.txt"
+  data-css="assets/snippets/rating/max-css.txt"></pea11y-snippet>
 
 
 
 <br>
 <div class="rating-flex-container">
-  <span class="rating-flex-item"
-        id="pea11y-rating-fancy-label">Niveau de connaissance de la compétence "Charger des produits"</span>
+  <p class="rating-flex-item" id="pea11y-rating-fancy-label">Niveau de connaissance de la compétence "Charger des
+    produits"</p>
   <div class="rating-flex-item">
-    <pea11y-rating id="pea11y-rating-fancy"
-                   labelledby="pea11y-rating-fancy-label"
-                   max="3"
-                   class-selected="fas fa-star rating-selected"
-                   class-empty="fas fa-star rating-empty"
-                   class-hover="fas fa-star rating-hover"></pea11y-rating>
-    <span id="pea11y-rating-fancy-selection"></span>
+    <pea11y-rating id="pea11y-rating-fancy" labelledby="pea11y-rating-fancy-label" max="3" class-selected="fas fa-star rating-selected"
+      class-empty="fas fa-star rating-empty" class-hover="fas fa-star rating-hover"></pea11y-rating>
+    <span id="pea11y-rating-fancy-selection" aria-hidden="true"></span>
   </div>
 </div>
 
 
 <div class="rating-flex-container">
-  <span class="rating-flex-item"
-        id="pea11y-rating-fancy-label">Niveau de connaissance de la compétence "Savoir travailler en équipe"
+  <p class="rating-flex-item" id="pea11y-rating-readonly-label">Niveau de connaissance de la compétence "Savoir
+    travailler
+    en équipe"
     (lecture
-    seule)</span>
+    seule)</p>
   <div class="rating-flex-item">
-    <pea11y-rating id="pea11y-rating-readonly"
-                   readonly="true"
-                   labelledby="pea11y-rating-readonly-label"
-                   max="3"
-                   value="2"
-                   class-selected="fas fa-star rating-selected"
-                   class-empty="fas fa-star rating-empty"></pea11y-rating>
-    <span id="pea11y-rating-readonly-selection"></span>
+    <pea11y-rating id="pea11y-rating-readonly" readonly="true" labelledby="pea11y-rating-readonly-label" max="3" value="2"
+      class-selected="fas fa-star rating-selected" class-empty="fas fa-star rating-empty"></pea11y-rating>
+    <span id="pea11y-rating-readonly-selection" aria-hidden="true"></span>
   </div>
 </div>
 
-<pea11y-snippet aria-hidden="true"
-                data-html="assets/snippets/rating/fancy-html.txt"
-                data-js="assets/snippets/rating/fancy-js.txt"
-                data-css="assets/snippets/rating/fancy-css.txt"></pea11y-snippet>
+<pea11y-snippet aria-hidden="true" data-html="assets/snippets/rating/fancy-html.txt" data-js="assets/snippets/rating/fancy-js.txt"
+  data-css="assets/snippets/rating/fancy-css.txt"></pea11y-snippet>

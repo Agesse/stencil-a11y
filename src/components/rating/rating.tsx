@@ -128,6 +128,7 @@ export class Rating {
 
     if (this.readonly) {
       let textRead = this.label ? this.label + ": " + this.textValues[this.value] : this.textValues[this.value];
+      textRead += " (" + this.value + "/" + this.max + ")";
       return (
         <div>
           {tabElems}

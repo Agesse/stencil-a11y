@@ -28,6 +28,9 @@ function initalizeRating() {
       document.getElementById(e.srcElement.id + "-selection").innerText = textValues[e.detail];
     } else {
       document.getElementById(e.srcElement.id + "-selection").innerText = e.detail;
+      if (e.srcElement.id.includes("max")) {
+        resetAriaLive("pea11y-rating-aria-live");
+      }
     }
   }, false);
   document.addEventListener("onMouseOver", (e) => {
