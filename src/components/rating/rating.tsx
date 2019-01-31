@@ -19,8 +19,8 @@ export class Rating {
 
   @Element() ratingElem: HTMLElement; // reference de l'element
   @State() hoveredValue: number; // valeur survolee
-  @Event() onChange: EventEmitter; // evenement emis au changement de valeur
-  @Event() onMouseOver: EventEmitter; // evenement emis au survol d'une valeur
+  @Event() onPea11yRatingChange: EventEmitter; // evenement emis au changement de valeur
+  @Event() onPea11yRatingHover: EventEmitter; // evenement emis au survol d'une valeur
 
   elementId: string;
 
@@ -28,13 +28,13 @@ export class Rating {
   @Method()
   setValue(newValue: number) {
     this.value = newValue;
-    this.onChange.emit(newValue);
+    this.onPea11yRatingChange.emit(newValue);
   }
 
   // Change la valeur survolee et emet l'evenement correspondant
   setHoveredValue(newValue: number) {
     this.hoveredValue = newValue;
-    this.onMouseOver.emit(newValue);
+    this.onPea11yRatingHover.emit(newValue);
   }
 
   // Execute juste avant le chargement du composant
@@ -55,7 +55,7 @@ export class Rating {
     if (!this.value) {
       this.setValue(0);
     } else {
-      this.onChange.emit(this.value); // important pour recuperer la valeur initiale
+      this.onPea11yRatingChange.emit(this.value); // important pour recuperer la valeur initiale
     }
     this.setHoveredValue(0);
   }

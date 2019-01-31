@@ -25,10 +25,10 @@
   },
   "devDependencies": {
     "@stencil/core": "0.12.4",
-    "@stencil/router": "^0.2.2",
+    "@stencil/router": "^0.2.8",
     "prismjs": "1.15.0"
   },
   "dependencies": {
-    "popper.js": "^1.14.4"
+    "popper.js": "^1.14.5"
   }
 }

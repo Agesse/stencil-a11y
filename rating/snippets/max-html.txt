@@ -1,7 +1,0 @@
-<label id="label-basic-max">Notez le film sur 8</label>
-<div id="basic-max" class="pe-a11y-rating"></div>
-<button onclick="reset('#basic-max')">Reinitialiser</button>
-<p aria-hidden="true">
-  Selection:
-  <span id="selection-basic-max"> </span>
-</p>

@@ -1,5 +1,8 @@
 exports.config = {
   enableCache: false,
+  devServer: {
+    openBrowser: false
+  },
   namespace: "pea11y",
   copy: [
     {

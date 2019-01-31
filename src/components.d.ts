@@ -30,8 +30,8 @@ export namespace Components {
     'label'?: string;
     'labelledby'?: string;
     'max'?: number;
-    'onOnChange'?: (event: CustomEvent) => void;
-    'onOnMouseOver'?: (event: CustomEvent) => void;
+    'onOnPea11yRatingChange'?: (event: CustomEvent) => void;
+    'onOnPea11yRatingHover'?: (event: CustomEvent) => void;
     'readonly'?: boolean;
     'textValues'?: any;
     'value'?: number;

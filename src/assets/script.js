@@ -23,7 +23,7 @@ function initalizeRating() {
   var textValues = ["Non renseigné", "Débutant", "Intermédiaire", "Avancé"];
   document.getElementById("pea11y-rating-fancy").setAttribute("text-values", textValues);
   document.getElementById("pea11y-rating-readonly").setAttribute("text-values", textValues);
-  document.addEventListener("onChange", (e) => {
+  document.addEventListener("onPea11yRatingChange", (e) => {
     if (e.srcElement.id.includes("fancy") || e.srcElement.id.includes("readonly")) {
       document.getElementById(e.srcElement.id + "-selection").innerText = textValues[e.detail];
     } else {
@@ -33,7 +33,7 @@ function initalizeRating() {
       }
     }
   }, false);
-  document.addEventListener("onMouseOver", (e) => {
+  document.addEventListener("onPea11yRatingHover", (e) => {
     if (!e.srcElement.id.includes("fancy") && !e.srcElement.id.includes("readonly")) {
       document.getElementById(e.srcElement.id + "-hover").innerText = e.detail;
     }
@@ -50,7 +50,9 @@ function resetRating(id) {
 }
 
 function resetAriaLive(id) {
-  document.getElementById(id).removeChild(document.getElementById(id).firstChild);
+  if (document.getElementById(id).firstChild) {
+    document.getElementById(id).removeChild(document.getElementById(id).firstChild);
+  }
 }
 
 // UXSTARS

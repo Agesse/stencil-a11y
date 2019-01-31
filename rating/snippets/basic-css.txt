@@ -1,5 +1,0 @@
-.pe-a11y-rating {
-  cursor: pointer;
-  display: inline-block;
-  font-size: larger;
-}

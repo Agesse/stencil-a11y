@@ -28,6 +28,6 @@ pea11y-rating .pea11y-rating-input {
 }
 
 pea11y-rating input:focus~.pea11y-rating-checkmark {
+  outline: auto 2px Highlight;
   outline: -webkit-focus-ring-color auto 5px;
-  ;
 }
