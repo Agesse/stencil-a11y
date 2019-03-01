@@ -1,5 +1,4 @@
 exports.config = {
-  enableCache: false,
   devServer: {
     openBrowser: false
   },

@@ -1,7 +1,7 @@
-document.addEventListener("onChange", (e) => {
+document.addEventListener("onPea11yRatingChange", (e) => {
     document.getElementById(e.srcElement.id + "-selection").innerText = e.detail;
 }, false);
-document.addEventListener("onMouseOver", (e) => {
+document.addEventListener("onPea11yRatingHover", (e) => {
     document.getElementById(e.srcElement.id + "-hover").innerText = e.detail;
 }, false);
 

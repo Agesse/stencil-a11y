@@ -2,6 +2,6 @@ var textValues = ["Non renseigné", "Débutant", "Intermédiaire", "Avancé"];
 document.getElementById("pea11y-rating-fancy").setAttribute("text-values", textValues);
 document.getElementById("pea11y-rating-readonly").setAttribute("text-values", textValues);
 
-document.addEventListener("onChange", (e) => {
+document.addEventListener("onPea11yRatingChange", (e) => {
     document.getElementById(e.srcElement.id + "-selection").innerText = textValues[e.detail];
 }, false);
