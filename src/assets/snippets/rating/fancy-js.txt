@@ -5,3 +5,7 @@ document.getElementById("pea11y-rating-readonly").setAttribute("text-values", te
 document.addEventListener("onPea11yRatingChange", (e) => {
     document.getElementById(e.srcElement.id + "-selection").innerText = textValues[e.detail];
 }, false);
+
+document.addEventListener("onPea11yRatingLeave", (e) => {
+    document.getElementById(e.srcElement.id + "-selection").innerText = textValues[e.detail];
+}, false)

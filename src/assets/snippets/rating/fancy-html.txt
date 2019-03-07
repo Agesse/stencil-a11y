@@ -1,14 +1,14 @@
 <div class="rating-flex-container">
-  <span class="rating-flex-item"
-        id="pea11y-rating-fancy-label">Niveau de connaissance de la compétence "Charger des produits"</span>
+  <p class="rating-flex-item"
+     id="pea11y-rat ing-fancy-label">Niveau de connaissance de la compétence "Charger des produits"</p>
   <div class="rating-flex-item">
+    <span id="pea11y-rating-fancy-selection"></span>
     <pea11y-rating id="pea11y-rating-fancy"
                    labelledby="pea11y-rating-fancy-label"
                    max="3"
                    class-selected="fas fa-star rating-selected"
                    class-empty="fas fa-star rating-empty"
                    class-hover="fas fa-star rating-hover"></pea11y-rating>
-    <span id="pea11y-rating-fancy-selection"></span>
   </div>
 </div>
 

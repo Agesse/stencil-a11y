@@ -33,6 +33,7 @@ export namespace Components {
     'max'?: number;
     'onOnPea11yRatingChange'?: (event: CustomEvent) => void;
     'onOnPea11yRatingHover'?: (event: CustomEvent) => void;
+    'onOnPea11yRatingLeave'?: (event: CustomEvent) => void;
     'readonly'?: boolean;
     'textValues'?: any;
     'value'?: number;

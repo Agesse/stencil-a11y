@@ -1,4 +1,4 @@
-import { Component, Prop, Method, State, Event, EventEmitter, Element } from '@stencil/core';
+import { Component, Element, Event, EventEmitter, Method, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'pea11y-rating',
@@ -21,6 +21,7 @@ export class Rating {
   @State() hoveredValue: number; // valeur survolee
   @Event() onPea11yRatingChange: EventEmitter; // evenement emis au changement de valeur
   @Event() onPea11yRatingHover: EventEmitter; // evenement emis au survol d'une valeur
+  @Event() onPea11yRatingLeave: EventEmitter; // evenement emis lorsqu'on sort du composant
 
   elementId: string;
 
@@ -74,6 +75,7 @@ export class Rating {
   onMouseLeave(event: any) {
     event.preventDefault();
     this.setHoveredValue(0);
+    this.onPea11yRatingLeave.emit(this.value);
   }
 
 
