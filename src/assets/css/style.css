@@ -62,14 +62,6 @@ pre>code {
 
 /** Rating **/
 
-pea11y-rating {
-  display: inline-block;
-}
-
-pea11y-rating label {
-  cursor: pointer !important;
-}
-
 pea11y-rating .rating-empty {
   color: #a7a9ac;
 }
@@ -87,13 +79,15 @@ pea11y-rating .rating-hover {
   font-size: medium;
 }
 
-#pea11y-rating-readonly {
-  cursor: default;
+#pea11y-rating-basic,
+#pea11y-rating-max {
+  display: flex;
+  margin-bottom: 1%;
 }
 
-.rating-flex-item {
-  color: #4a4a4a;
-  font-size: medium;
+#pea11y-rating-basic .pea11y-rating-selection,
+#pea11y-rating-max .pea11y-rating-selection {
+  margin: 0 0 0 1%;
 }
 
 .rating-flex-container {
@@ -102,8 +96,19 @@ pea11y-rating .rating-hover {
 }
 
 .rating-flex-container pea11y-rating {
-  margin-right: 10px;
+  width: 30%;
 }
+
+.rating-flex-container .pea11y-rating-selection {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#pea11y-rating-fancy-label,
+#pea11y-rating-readonly-label {
+  font-size: medium;
+  color: rgba(0, 0, 0, 0.6)
+}
+
 
 /* Snippets de code */
 
@@ -147,6 +152,7 @@ pea11y-tabs .active {
   from {
     border-bottom: 2px solid rgba(0, 0, 0, 0);
   }
+
   to {
     border-bottom: 2px solid var(--accent-color);
   }

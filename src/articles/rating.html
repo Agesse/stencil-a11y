@@ -56,6 +56,26 @@
     </tr>
     <tr>
       <td>
+        <code>show-text</code>
+      </td>
+      <td>Afficher automatiquement la valeur (false pour customiser le rendu de la sélection).</td>
+      <td>
+        <code>boolean</code>
+      </td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>
+        <code>result-text</code>
+      </td>
+      <td>Texte affiché avant la valeur.</td>
+      <td>
+        <code>string</code>
+      </td>
+      <td>null</td>
+    </tr>
+    <tr>
+      <td>
         <code>labelledby</code>
       </td>
       <td>Donne l'id de l'élément HTML qui sert de label au composant.</td>
@@ -173,12 +193,6 @@
 <div id="pea11y-rating-aria-live"
      class="sr-only"
      aria-live="polite"></div>
-<p aria-hidden="true">
-  Selection:
-  <span id="pea11y-rating-max-selection"> </span>
-  <br> Hover:
-  <span id="pea11y-rating-max-hover"> </span>
-</p>
 
 <pea11y-snippet aria-hidden="true"
                 data-html="assets/snippets/rating/max-html.txt"
@@ -189,42 +203,32 @@
 
 <br>
 <div class="rating-flex-container">
-  <p class="rating-flex-item"
-     id="pea11y-rat ing-fancy-label">Niveau de connaissance de la compétence "Charger des produits"</p>
-  <div class="rating-flex-item">
-    <span id="pea11y-rating-fancy-selection"
-          aria-hidden="true"></span>
-    <pea11y-rating id="pea11y-rating-fancy"
-                   labelledby="pea11y-rating-fancy-label"
-                   max="3"
-                   class-selected="fas fa-star rating-selected"
-                   class-empty="fas fa-star rating-empty"
-                   class-hover="fas fa-star rating-hover"></pea11y-rating>
-  </div>
+  <p id="pea11y-rating-fancy-label">Niveau de connaissance de la compétence "Charger des produits"</p>
+  <pea11y-rating id="pea11y-rating-fancy"
+                 labelledby="pea11y-rating-fancy-label"
+                 max="3"
+                 class-selected="fas fa-star rating-selected"
+                 class-empty="fas fa-star rating-empty"
+                 class-hover="fas fa-star rating-hover"></pea11y-rating>
 </div>
 
 
 <div class="rating-flex-container">
-  <p class="rating-flex-item"
-     id="pea11y-rating-readonly-label">Niveau de connaissance de la compétence "Savoir
+  <p id="pea11y-rating-readonly-label">Niveau de connaissance de la compétence "Savoir
     travailler
     en équipe"
     (lecture
     seule)</p>
-  <div class="rating-flex-item">
-    <pea11y-rating id="pea11y-rating-readonly"
-                   readonly="true"
-                   labelledby="pea11y-rating-readonly-label"
-                   max="3"
-                   value="2"
-                   class-selected="fas fa-star rating-selected"
-                   class-empty="fas fa-star rating-empty"></pea11y-rating>
-    <span id="pea11y-rating-readonly-selection"
-          aria-hidden="true"></span>
-  </div>
+  <pea11y-rating id="pea11y-rating-readonly"
+                 readonly="true"
+                 result-text="Niveau de connaissance"
+                 labelledby="pea11y-rating-readonly-label"
+                 max="3"
+                 value="2"
+                 class-selected="fas fa-star rating-selected"
+                 class-empty="fas fa-star rating-empty"></pea11y-rating>
 </div>
 
 <pea11y-snippet aria-hidden="true"
                 data-html="assets/snippets/rating/fancy-html.txt"
-                data-js="assets/snippets/rating/fancy-js.txt"
                 data-css="assets/snippets/rating/fancy-css.txt"></pea11y-snippet>

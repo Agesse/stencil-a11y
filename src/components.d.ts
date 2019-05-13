@@ -20,7 +20,9 @@ export namespace Components {
     'labelledby': string;
     'max': number;
     'readonly': boolean;
+    'resultText': string;
     'setValue': (newValue: number) => void;
+    'showText': boolean;
     'textValues': any;
     'value': number;
   }
@@ -35,6 +37,8 @@ export namespace Components {
     'onOnPea11yRatingHover'?: (event: CustomEvent) => void;
     'onOnPea11yRatingLeave'?: (event: CustomEvent) => void;
     'readonly'?: boolean;
+    'resultText'?: string;
+    'showText'?: boolean;
     'textValues'?: any;
     'value'?: number;
   }

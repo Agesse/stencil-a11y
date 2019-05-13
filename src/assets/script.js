@@ -25,9 +25,7 @@ function initalizeRating() {
   document.getElementById("pea11y-rating-readonly").setAttribute("text-values", textValues);
 
   document.addEventListener("onPea11yRatingChange", (e) => {
-    if (e.srcElement.id.includes("fancy") || e.srcElement.id.includes("readonly")) {
-      document.getElementById(e.srcElement.id + "-selection").innerText = textValues[e.detail];
-    } else {
+    if (e.srcElement.id.includes("basic")) {
       document.getElementById(e.srcElement.id + "-selection").innerText = e.detail;
       if (e.srcElement.id.includes("max")) {
         resetAriaLive("pea11y-rating-aria-live");
@@ -36,16 +34,8 @@ function initalizeRating() {
   }, false);
 
   document.addEventListener("onPea11yRatingHover", (e) => {
-    if (e.srcElement.id.includes("fancy")) {
-      document.getElementById(e.srcElement.id + "-selection").innerText = textValues[e.detail];
-    } else if (!e.srcElement.id.includes("readonly")) {
+    if (e.srcElement.id.includes("basic")) {
       document.getElementById(e.srcElement.id + "-hover").innerText = e.detail;
-    }
-  }, false);
-
-  document.addEventListener("onPea11yRatingLeave", (e) => {
-    if (e.srcElement.id.includes("fancy")) {
-      document.getElementById(e.srcElement.id + "-selection").innerText = textValues[e.detail];
     }
   }, false);
 }

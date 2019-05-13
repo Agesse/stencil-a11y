@@ -1,11 +1,3 @@
-pea11y-rating {
-  display: inline-block;
-}
-
-pea11y-rating label {
-  cursor: pointer !important;
-}
-
 pea11y-rating .rating-empty {
   color: #a7a9ac;
 }
@@ -23,20 +15,21 @@ pea11y-rating .rating-hover {
   font-size: medium;
 }
 
-#pea11y-rating-readonly {
-  cursor: default;
-}
-
-.rating-flex-item {
-  color: #4a4a4a;
-  font-size: medium;
-}
-
 .rating-flex-container {
   display: flex;
   justify-content: space-between;
 }
 
 .rating-flex-container pea11y-rating {
-  margin-right: 10px;
+  width: 30%;
+}
+
+.rating-flex-container .pea11y-rating-selection {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+#pea11y-rating-fancy-label,
+#pea11y-rating-readonly-label {
+  font-size: medium;
+  color: rgba(0, 0, 0, 0.6)
 }

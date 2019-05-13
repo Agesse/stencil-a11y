@@ -1,10 +1,3 @@
-document.addEventListener("onPea11yRatingChange", (e) => {
-    document.getElementById(e.srcElement.id + "-selection").innerText = e.detail;
-}, false);
-document.addEventListener("onPea11yRatingHover", (e) => {
-    document.getElementById(e.srcElement.id + "-hover").innerText = e.detail;
-}, false);
-
 function resetRating(id) {
   document.getElementById(id).setValue(0);
   if (!document.getElementById("pea11y-rating-aria-live").firstChild) {

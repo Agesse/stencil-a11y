@@ -1,12 +1,13 @@
-pea11y-rating {
-  display: inline-block;
-}
-
-pea11y-rating label {
-  cursor: pointer !important;
-}
-
 .pea11y-rating-label {
   margin-bottom: 0;
   font-size: medium;
+}
+
+#pea11y-rating-basic {
+  display: flex;
+  margin-bottom: 1%;
+}
+
+#pea11y-rating-basic .pea11y-rating-selection {
+  margin: 0 0 0 1%;
 }

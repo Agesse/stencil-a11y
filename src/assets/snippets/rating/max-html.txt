@@ -11,9 +11,3 @@
 <div id="pea11y-rating-aria-live"
      class="sr-only"
      aria-live="polite"></div>
-<p aria-hidden="true">
-  Selection:
-  <span id="pea11y-rating-max-selection"> </span>
-  <br> Hover:
-  <span id="pea11y-rating-max-hover"> </span>
-</p>

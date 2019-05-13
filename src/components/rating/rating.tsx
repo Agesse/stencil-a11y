@@ -16,6 +16,8 @@ export class Rating {
   @Prop() classSelected: string = `fas fa-star`;
   @Prop() classHover: string = `fas fa-star`;
   @Prop() classEmpty: string = `far fa-star`;
+  @Prop() resultText: string = null; // texte a afficher avant la valeur
+  @Prop() showText: boolean = true; // afficher ou non la valeur
 
   @Element() ratingElem: HTMLElement; // reference de l'element
   @State() hoveredValue: number; // valeur survolee
@@ -92,7 +94,6 @@ export class Rating {
     classList += " pea11y-rating-checkmark";
 
     if (this.readonly) {
-
       return (
         <span class={classList} aria-hidden="true"></span>
       );
@@ -129,20 +130,43 @@ export class Rating {
     }
 
     if (this.readonly) {
-      let textRead = this.label ? this.label + ": " + this.textValues[this.value] : this.textValues[this.value];
-      textRead += " (" + this.value + "/" + this.max + ")";
-      return (
+      let textReadElems = [];
+      if (this.label) {
+        textReadElems.push(<span class="sr-only">{this.label}:&nbsp;</span>);
+      }
+      if (this.resultText) {
+        textReadElems.push(<span>{this.resultText}&nbsp;{this.textValues[this.value]}</span>);
+      } else if (this.showText) {
+        textReadElems.push(<span>{this.textValues[this.value]}</span>);
+      } else {
+        textReadElems.push(<span class="sr-only">{this.textValues[this.value]}</span>);
+      }
+      textReadElems.push(<span class="sr-only">&nbsp;({this.value}/{this.max})</span>);
+
+      return ([
         <div>
           {tabElems}
-          <span class="sr-only">{textRead}</span>
-        </div>
-      );
+        </div>,
+        <p class="pea11y-rating-selection">{textReadElems}</p>
+      ]);
     } else {
+      let textReadElems = [];
+      if (this.showText) {
+        let showedValue = this.hoveredValue ? this.hoveredValue : this.value;
+        if (this.resultText) {
+          textReadElems.push(<span>{this.resultText}&nbsp;{this.textValues[showedValue]}</span>);
+        } else {
+          textReadElems.push(<span>{this.textValues[showedValue]}</span>);
+        }
+        textReadElems.push(<span class="sr-only">&nbsp;sélectionné</span>);
+      }
+
       return (
-        <div id={this.elementId} role="group" onMouseLeave={(ev) => this.onMouseLeave(ev)} aria-label={this.label} aria-labelledby={this.labelledby}>
+        [<div id={this.elementId} role="group" onMouseLeave={(ev) => this.onMouseLeave(ev)} aria-label={this.label} aria-labelledby={this.labelledby}>
           {tabElems}
-        </div>
-      );
+        </div>,
+        <p class="pea11y-rating-selection">{textReadElems}</p>
+        ]);
     }
   }
 

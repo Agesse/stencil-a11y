@@ -14,6 +14,7 @@ pea11y-rating label {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  cursor: pointer;
 }
 
 pea11y-rating input[type="radio"] {
@@ -23,7 +24,8 @@ pea11y-rating input[type="radio"] {
   width: 0;
 }
 
-pea11y-rating .pea11y-rating-input {
+pea11y-rating .pea11y-rating-input,
+pea11y-rating div {
   display: inline;
 }
 

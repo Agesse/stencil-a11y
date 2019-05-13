@@ -1,31 +1,26 @@
 <div class="rating-flex-container">
-  <p class="rating-flex-item"
-     id="pea11y-rat ing-fancy-label">Niveau de connaissance de la compétence "Charger des produits"</p>
-  <div class="rating-flex-item">
-    <span id="pea11y-rating-fancy-selection"></span>
-    <pea11y-rating id="pea11y-rating-fancy"
-                   labelledby="pea11y-rating-fancy-label"
-                   max="3"
-                   class-selected="fas fa-star rating-selected"
-                   class-empty="fas fa-star rating-empty"
-                   class-hover="fas fa-star rating-hover"></pea11y-rating>
-  </div>
+  <p id="pea11y-rating-fancy-label">Niveau de connaissance de la compétence "Charger des produits"</p>
+  <pea11y-rating id="pea11y-rating-fancy"
+                 labelledby="pea11y-rating-fancy-label"
+                 max="3"
+                 class-selected="fas fa-star rating-selected"
+                 class-empty="fas fa-star rating-empty"
+                 class-hover="fas fa-star rating-hover"></pea11y-rating>
 </div>
 
 
 <div class="rating-flex-container">
-  <span class="rating-flex-item"
-        id="pea11y-rating-fancy-label">Niveau de connaissance de la compétence "Savoir travailler en équipe"
+  <p id="pea11y-rating-readonly-label">Niveau de connaissance de la compétence "Savoir
+    travailler
+    en équipe"
     (lecture
-    seule)</span>
-  <div class="rating-flex-item">
-    <pea11y-rating id="pea11y-rating-readonly"
-                   readonly="true"
-                   labelledby="pea11y-rating-readonly-label"
-                   max="3"
-                   value="2"
-                   class-selected="fas fa-star rating-selected"
-                   class-empty="fas fa-star rating-empty"></pea11y-rating>
-    <span id="pea11y-rating-readonly-selection"></span>
-  </div>
+    seule)</p>
+  <pea11y-rating id="pea11y-rating-readonly"
+                 readonly="true"
+                 result-text="Niveau de connaissance"
+                 labelledby="pea11y-rating-readonly-label"
+                 max="3"
+                 value="2"
+                 class-selected="fas fa-star rating-selected"
+                 class-empty="fas fa-star rating-empty"></pea11y-rating>
 </div>
