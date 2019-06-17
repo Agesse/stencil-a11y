@@ -30,6 +30,6 @@ pea11y-rating div {
 }
 
 pea11y-rating input:focus~.pea11y-rating-checkmark {
-  outline-color: rgb(77, 144, 254) solid 2px;
+  outline: rgb(77, 144, 254) solid 2px;
   outline: -webkit-focus-ring-color auto 5px;
 }

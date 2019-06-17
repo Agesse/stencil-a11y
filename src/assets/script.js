@@ -20,10 +20,6 @@ $(document).ready(function () {
 
 // RATING
 function initalizeRating() {
-  var textValues = ["Non renseigné", "Débutant", "Intermédiaire", "Avancé"];
-  document.getElementById("pea11y-rating-fancy").setAttribute("text-values", textValues);
-  document.getElementById("pea11y-rating-readonly").setAttribute("text-values", textValues);
-
   document.addEventListener("onPea11yRatingChange", (e) => {
     if (e.srcElement.id.includes("basic")) {
       document.getElementById(e.srcElement.id + "-selection").innerText = e.detail;
