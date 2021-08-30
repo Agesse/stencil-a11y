@@ -1,6 +1,6 @@
 {
-  "name": "pea11y",
-  "version": "1.0.0",
+  "name": "@pe-a11y/web-components",
+  "version": "1.0.1",
   "description": "Site de demonstration des composants accessibles PeA11y",
   "module": "dist/esm/index.js",
   "collection": "dist/collection/collection-manifest.json",
@@ -10,6 +10,7 @@
     "dist/pea11y.js",
     "dist/index.js",
     "dist/types",
+    "dist/loader",
     "dist/pea11y",
     "dist/esm",
     "dist/collection/interface.js",
