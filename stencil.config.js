@@ -1,19 +1,21 @@
 exports.config = {
   devServer: {
-    openBrowser: false
+    openBrowser: false,
   },
   namespace: "pea11y",
-  copy: [
-    {
-      src: "articles"
-    },
-    {
-      src: "../node_modules/prismjs",
-      dest: "prismjs"
-    }
-  ],
   outputTargets: [
-    { type: 'www' },
-    { type: 'dist' }
-  ]
+    {
+      type: "www",
+      serviceWorker: null,
+      baseUrl: "http://pe.fr",
+      copy: [
+        { src: "articles" },
+        {
+          src: "../node_modules/prismjs",
+          dest: "prismjs",
+        },
+      ],
+    },
+    { type: "dist" },
+  ],
 };

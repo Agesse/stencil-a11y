@@ -1,6 +1,6 @@
-document.addEventListener("onPea11yRatingChange", (e) => {
+document.addEventListener("pea11yRatingChange", (e) => {
     document.getElementById(e.srcElement.id + "-selection").innerText = e.detail;
 }, false);
-document.addEventListener("onPea11yRatingHover", (e) => {
+document.addEventListener("pea11yRatingHover", (e) => {
     document.getElementById(e.srcElement.id + "-hover").innerText = e.detail;
 }, false);

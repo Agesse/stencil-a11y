@@ -30,25 +30,26 @@
 
     <script src="prismjs/prism.js"></script>
     <script src="assets/script.js"></script>
-    <script src="build/pea11y.js"></script>
+    <script type="module" src="/build/pea11y.esm.js"></script>
+    <script nomodule src="/build/pea11y.js"></script>
 
   </head>
 
 
   <body class="container">
 
-    <header id="top">
+    <header id="top" role="banner">
       <img src="assets/img/pea11y-icon.svg"
            alt=""
            width="100px">
       <h1>PeA11y
-        <span>Composants accessibles</span>
+        <span role="none">Composants accessibles</span>
       </h1>
       <hr role="presentation">
     </header>
 
-    <nav>
-      <header>Composants</header>
+    <nav role="navigation">
+      <h2 class="nav-header">Composants</h2>
       <ul>
         <li>
           <a href="#demo-rating">Notation</a>
@@ -56,9 +57,9 @@
         <li>
           <a href="#demo-uxstars">UXStars</a>
         </li>
-        <li>
+        <!-- <li>
           <a href="#demo-tooltip">Tooltip</a>
-        </li>
+        </li> -->
         <li>
           <a href="#demo-tabs">Onglets</a>
         </li>
@@ -68,7 +69,7 @@
       </ul>
     </nav>
 
-    <p aria-hidden="true">Pour inclure l'ensemble des composants :
+    <p>Pour inclure l'ensemble des composants :
       <pre><code class="language-html">&lt;script src="node_modules/@pea11y/uxstars/dist/pea11y.js"&gt;&lt;/script&gt;</code></pre>
     </p>
 
@@ -76,8 +77,8 @@
     <hr role="presentation">
     <div id="demo-uxstars"></div>
     <hr role="presentation">
-    <div id="demo-tooltip"></div>
-    <hr role="presentation">
+    <!-- <div id="demo-tooltip"></div>
+    <hr role="presentation"> -->
     <div id="demo-tabs"></div>
     <hr role="presentation">
     <div id="demo-snippet"></div>

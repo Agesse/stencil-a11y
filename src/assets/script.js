@@ -20,7 +20,7 @@ $(document).ready(function () {
 
 // RATING
 function initalizeRating() {
-  document.addEventListener("onPea11yRatingChange", (e) => {
+  document.addEventListener("pea11yRatingChange", (e) => {
     if (e.srcElement.id.includes("basic")) {
       document.getElementById(e.srcElement.id + "-selection").innerText = e.detail;
       if (e.srcElement.id.includes("max")) {
@@ -29,7 +29,7 @@ function initalizeRating() {
     }
   }, false);
 
-  document.addEventListener("onPea11yRatingHover", (e) => {
+  document.addEventListener("pea11yRatingHover", (e) => {
     if (e.srcElement.id.includes("basic")) {
       document.getElementById(e.srcElement.id + "-hover").innerText = e.detail;
     }

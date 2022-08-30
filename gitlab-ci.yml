@@ -1,0 +1,11 @@
+pages:
+  image:
+    name: node:12.17.0
+    entrypoint: [""]
+  script:
+    - npm build
+  artifacts:
+    paths:
+      - www
+  only:
+    - main

@@ -1,22 +1,15 @@
 {
   "name": "@pe-a11y/web-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Site de demonstration des composants accessibles PeA11y",
-  "module": "dist/esm/index.js",
-  "collection": "dist/collection/collection-manifest.json",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
   "types": "dist/types/components.d.ts",
-  "main": "dist/index.js",
-  "files": [
-    "dist/pea11y.js",
-    "dist/index.js",
-    "dist/types",
-    "dist/loader",
-    "dist/pea11y",
-    "dist/esm",
-    "dist/collection/interface.js",
-    "dist/collection/collection-manifest.json",
-    "dist/collection/components"
-  ],
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/pea11y/pea11y.esm.js",
   "author": "shirley.noel@pole-emploi.fr",
   "license": "MIT",
   "repository": "ssh://git@git-scm.pole-emploi.intra:2222/Handicap_A11Y/Composants_JS.git",
@@ -28,9 +21,9 @@
     "build": "stencil build --prerender --prod && npm pack"
   },
   "devDependencies": {
-    "@stencil/core": "^0.18.0",
+    "@stencil/core": "2.17.4",
     "@stencil/router": "^0.3.3",
-    "prismjs": "1.15.0",
+    "prismjs": "^1.29.0",
     "workbox-build": "3.4.1"
   },
   "dependencies": {

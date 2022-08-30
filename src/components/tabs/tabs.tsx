@@ -1,4 +1,4 @@
-import { Component, Prop, Listen, Element } from '@stencil/core';
+import { Component, Prop, Listen, Element, h } from '@stencil/core';
 import * as Render from "./utils";
 
 @Component({

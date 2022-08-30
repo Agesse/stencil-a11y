@@ -18,10 +18,8 @@ pea11y-rating label {
 }
 
 pea11y-rating input[type="radio"] {
-  position: fixed;
-  opacity: 0;
-  height: 0;
-  width: 0;
+  position: absolute;
+  left: -9999px;
 }
 
 pea11y-rating .pea11y-rating-input,
@@ -29,7 +27,7 @@ pea11y-rating div {
   display: inline;
 }
 
-pea11y-rating input:focus~.pea11y-rating-checkmark {
-  outline: rgb(77, 144, 254) solid 2px;
+pea11y-rating .pea11y-radio-container:focus-within {
+  outline: black solid 2px;
   outline: -webkit-focus-ring-color auto 5px;
 }
