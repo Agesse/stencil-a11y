@@ -7,6 +7,7 @@ exports.config = {
     {
       type: "www",
       serviceWorker: null,
+      dir: "public",
       baseUrl: "https://handicap_a11y.git-scm.pole-emploi.intra",
       copy: [
         { src: "articles" },
