@@ -7,6 +7,7 @@ cache:
 pages:
   stage: deploy
   before_script:
+    - npm config set registry http://artefact-repo.pole-emploi.intra/artifactory/api/npm/npm-public
     - npm install stencil
   script:
     - npm run build
