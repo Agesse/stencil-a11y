@@ -1,0 +1,17 @@
+image: node:10-alpine
+
+cache:
+  paths:
+    - ./node_modules
+
+pages:
+  stage: deploy
+  before_script:
+    - npm install stencil
+  script:
+    - npm run build
+  artifacts:
+    paths:
+      - www
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
