@@ -8,9 +8,11 @@ pages:
   stage: deploy
   before_script:
     - npm config set registry http://artefact-repo.pole-emploi.intra/artifactory/api/npm/npm-public
+    - ls
     - npm install stencil
+    - npm i
   script:
-    - npm start
+    - npm run website
   artifacts:
     paths:
       - www
